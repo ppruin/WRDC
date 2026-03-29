@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e49f8de1-2a18-4989-a24d-a04bc5408611}</ProjectGuid>
+    <RootNamespace>rdc</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings"></ImportGroup>
+  <ImportGroup Label="Shared"></ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\mimalloc\ide\vs2022\mimalloc-lib.vcxproj">
+      <Project>{abb5eae7-b3e6-432e-b636-333449892ea6}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="agent\encoder\bgra_to_nv12_converter.cpp" />
+    <ClCompile Include="agent\platform\windows\d3d11_desktop_frame_reader.cpp" />
+    <ClCompile Include="agent\platform\windows\dxgi_desktop_duplicator.cpp" />
+    <ClCompile Include="agent\platform\windows\x264_h264_encoder.cpp" />
+    <ClCompile Include="agent\main.cpp">
+      <ObjectFileName>$(IntDir)agent_main.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="agent\session\desktop_streamer.cpp" />
+    <ClCompile Include="controller\renderer\desktop_window_renderer.cpp" />
+    <ClCompile Include="controller\ui\browser_controller_assets.cpp" />
+    <ClCompile Include="controller\renderer\openh264_video_decoder.cpp" />
+    <ClCompile Include="controller\main.cpp">
+      <ObjectFileName>$(IntDir)controller_main.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="controller\rtc\controller_client.cpp" />
+    <ClCompile Include="entry.cpp" />
+    <ClCompile Include="agent\session\host_client.cpp" />
+    <ClCompile Include="mimalloc_override.cpp" />
+    <ClCompile Include="agent\rtc\peer_session.cpp" />
+    <ClCompile Include="protocol\common\console_logger.cpp" />
+    <ClCompile Include="protocol\common\win_websocket_client.cpp" />
+    <ClCompile Include="server\audit\server_logger.cpp" />
+    <ClCompile Include="server\main.cpp">
+      <ObjectFileName>$(IntDir)server_main.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="server\signaling_gateway\signaling_server.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="agent\encoder\bgra_to_nv12_converter.hpp" />
+    <ClInclude Include="agent\encoder\encoded_video_frame.hpp" />
+    <ClInclude Include="agent\encoder\nv12_video_frame.hpp" />
+    <ClInclude Include="agent\encoder\raw_video_frame.hpp" />
+    <ClInclude Include="agent\platform\windows\d3d11_desktop_frame_reader.hpp" />
+    <ClInclude Include="agent\capture\desktop_capturer.hpp" />
+    <ClInclude Include="agent\capture\desktop_frame.hpp" />
+    <ClInclude Include="agent\platform\windows\dxgi_desktop_duplicator.hpp" />
+    <ClInclude Include="agent\platform\windows\x264_h264_encoder.hpp" />
+    <ClInclude Include="controller\renderer\decoded_video_frame.hpp" />
+    <ClInclude Include="controller\ui\browser_controller_assets.hpp" />
+    <ClInclude Include="controller\renderer\desktop_window_renderer.hpp" />
+    <ClInclude Include="controller\renderer\openh264_video_decoder.hpp" />
+    <ClInclude Include="agent\session\desktop_streamer.hpp" />
+    <ClInclude Include="controller\rtc\controller_client.hpp" />
+    <ClInclude Include="controller\rtc\h264_rtp_depacketizer.hpp" />
+    <ClInclude Include="agent\session\host_client.hpp" />
+    <ClInclude Include="agent\rtc\peer_session.hpp" />
+    <ClInclude Include="protocol\common\buffer_utils.hpp" />
+    <ClInclude Include="protocol\common\json_utils.hpp" />
+    <ClInclude Include="protocol\common\rtc_handle_utils.hpp" />
+    <ClInclude Include="protocol\common\console_logger.hpp" />
+    <ClInclude Include="protocol\common\video_convert_utils.hpp" />
+    <ClInclude Include="protocol.hpp" />
+    <ClInclude Include="protocol\common\win_websocket_client.hpp" />
+    <ClInclude Include="server\audit\server_logger.hpp" />
+    <ClInclude Include="server\transport\server_config.hpp" />
+    <ClInclude Include="server\signaling_gateway\signaling_server.hpp" />
+    <ClInclude Include="agent\platform\windows\mf_h264_encoder.hpp" />
+    <ClInclude Include="protocol\common\json_types.hpp" />
+    <ClInclude Include="protocol\control\control_protocol.hpp" />
+    <ClInclude Include="protocol\signaling\signaling_protocol.hpp" />
+    <ClInclude Include="signal_socket.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="agent\platform\windows\mf_h264_encoder.cpp" />
+    <None Include="signal_socket.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets"></ImportGroup>
+</Project>

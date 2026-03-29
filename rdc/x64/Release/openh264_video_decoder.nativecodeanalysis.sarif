@@ -1,0 +1,91 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33145.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/controller/renderer/openh264_video_decoder.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "551d280692691637a3aed281b4d2deb17fd792093d6b3105799674686f8624b9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/controller/renderer/openh264_video_decoder.hpp"
+          },
+          "hashes": {
+            "sha-256": "a58b30547b8751f56a59faf42b62591ad31cf9cc0e2a8d13d4fcadcd43683a20"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/controller/renderer/decoded_video_frame.hpp"
+          },
+          "hashes": {
+            "sha-256": "a9b73aedc7d092b00fe812202ce237632dc199efbefa2a977101f51d54e69fca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol/common/buffer_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "0296ba9eb9e996c924f09429c13167708de95832018e298946e1651f9351264a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/wels/codec_api.h"
+          },
+          "hashes": {
+            "sha-256": "21f29b20c24f7c7946f2e243d0bc2532fb3542f6c28af338209477e70d9036c9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/wels/codec_app_def.h"
+          },
+          "hashes": {
+            "sha-256": "a40581a24263866dca19911928f7bc4eb354ff78d9dd56dbf0f55fc4fd923726"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/wels/codec_def.h"
+          },
+          "hashes": {
+            "sha-256": "f974d269b5935e8dc7265b8bfc02f60e5185b4d6165d30541d2758a4506f1979"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol/common/video_convert_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "380c858e0fdc5f0ea3a940d3ae444a8d57335cc16d28316c5ac8999407ba43f6"
+          }
+        }
+      ]
+    }
+  ]
+}

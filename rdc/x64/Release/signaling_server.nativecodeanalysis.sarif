@@ -1,0 +1,3392 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::PreparedMessage::opCode。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/Loop.h"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::PreparedMessage::{ctor}",
+                  "decoratedName": "??0PreparedMessage@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::PreparedMessage::opCode"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::PreparedMessage::compressed。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/Loop.h"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::PreparedMessage::{ctor}",
+                  "decoratedName": "??0PreparedMessage@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::PreparedMessage::compressed"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::ChunkIterator::trailer。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/ChunkedEncoding.h"
+                },
+                "region": {
+                  "startLine": 206,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::ChunkIterator::{ctor}",
+                  "decoratedName": "??0ChunkIterator@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::ChunkIterator::trailer"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::ChunkIterator::state。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/ChunkedEncoding.h"
+                },
+                "region": {
+                  "startLine": 206,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::ChunkIterator::{ctor}",
+                  "decoratedName": "??0ChunkIterator@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::ChunkIterator::state"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::ChunkIterator::data。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/ChunkedEncoding.h"
+                },
+                "region": {
+                  "startLine": 206,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::ChunkIterator::{ctor}",
+                  "decoratedName": "??0ChunkIterator@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::ChunkIterator::data"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::HttpRequest::querySeparator。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpParser.h"
+                },
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::HttpRequest::{ctor}",
+                  "decoratedName": "??0HttpRequest@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::HttpRequest::querySeparator"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::HttpRequest::ancientHttp。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpParser.h"
+                },
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::HttpRequest::{ctor}",
+                  "decoratedName": "??0HttpRequest@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::HttpRequest::ancientHttp"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::HttpRequest::didYield。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpParser.h"
+                },
+                "region": {
+                  "startLine": 193,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::HttpRequest::{ctor}",
+                  "decoratedName": "??0HttpRequest@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::HttpRequest::didYield"
+          }
+        },
+        {
+          "ruleId": "C26439",
+          "level": "warning",
+          "message": {
+            "text": "此类函数不应 throw。声明它为 \"noexcept\" (f.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/AsyncSocketData.h"
+                },
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::BackPressure::{ctor}",
+                  "decoratedName": "??0BackPressure@uWS@@QEAA@$$QEAU01@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::Subscriber::prev。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/TopicTree.h"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::Subscriber::{ctor}",
+                  "decoratedName": "??0Subscriber@uWS@@AEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::Subscriber::prev"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::Subscriber::next。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/TopicTree.h"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::Subscriber::{ctor}",
+                  "decoratedName": "??0Subscriber@uWS@@AEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::Subscriber::next"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::Subscriber::messageIndices。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/TopicTree.h"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::Subscriber::{ctor}",
+                  "decoratedName": "??0Subscriber@uWS@@AEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::Subscriber::messageIndices"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::Subscriber::user。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/TopicTree.h"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::Subscriber::{ctor}",
+                  "decoratedName": "??0Subscriber@uWS@@AEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::Subscriber::user"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketState<1>::mask。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketProtocol.h"
+                },
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketState<1>::{ctor}",
+                  "decoratedName": "??0?$WebSocketState@$00@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketState<1>::mask"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@HV?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@W4OpCode@2@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *,us_socket_context_t *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *,us_socket_context_t *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$0A@@uWS@@PEAUHttpRequest@2@PEAUus_socket_context_t@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *,us_socket_context_t *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@HV?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@W4OpCode@2@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *,us_socket_context_t *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *,us_socket_context_t *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$00@uWS@@PEAUHttpRequest@2@PEAUus_socket_context_t@@@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *,us_socket_context_t *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketState<1>::State::spill。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketProtocol.h"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketState<1>::State::{ctor}",
+                  "decoratedName": "??0State@?$WebSocketState@$00@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketState<1>::State::spill"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketState<1>::State::opCode。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketProtocol.h"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketState<1>::State::{ctor}",
+                  "decoratedName": "??0State@?$WebSocketState@$00@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketState<1>::State::opCode"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,char const *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,char const *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEBD@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,char const *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@_N$0A@_K@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@$$V@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@V?$basic_string_view@DU?$char_traits@D@std@@@std@@_K@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$0A@@uWS@@PEAUHttpRequest@2@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$00@uWS@@PEAUHttpRequest@2@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::HttpRouter<uWS::HttpContextData<0>::RouterData>::RouteParameters::paramsTop。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpRouter.h"
+                },
+                "region": {
+                  "startLine": 121,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::HttpRouter<uWS::HttpContextData<0>::RouterData>::RouteParameters::{ctor}",
+                  "decoratedName": "??0RouteParameters@?$HttpRouter@URouterData@?$HttpContextData@$0A@@uWS@@@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::HttpRouter<uWS::HttpContextData<0>::RouterData>::RouteParameters::paramsTop"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::HttpRouter<uWS::HttpContextData<1>::RouterData>::RouteParameters::paramsTop。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpRouter.h"
+                },
+                "region": {
+                  "startLine": 121,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::HttpRouter<uWS::HttpContextData<1>::RouterData>::RouteParameters::{ctor}",
+                  "decoratedName": "??0RouteParameters@?$HttpRouter@URouterData@?$HttpContextData@$00@uWS@@@uWS@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::HttpRouter<uWS::HttpContextData<1>::RouterData>::RouteParameters::paramsTop"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::HttpRouter<uWS::HttpContextData<0>::RouterData>::Node::isHighPriority。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpRouter.h"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::HttpRouter<uWS::HttpContextData<0>::RouterData>::Node::{ctor}",
+                  "decoratedName": "??0Node@?$HttpRouter@URouterData@?$HttpContextData@$0A@@uWS@@@uWS@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::HttpRouter<uWS::HttpContextData<0>::RouterData>::Node::isHighPriority"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::HttpRouter<uWS::HttpContextData<1>::RouterData>::Node::isHighPriority。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpRouter.h"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::HttpRouter<uWS::HttpContextData<1>::RouterData>::Node::{ctor}",
+                  "decoratedName": "??0Node@?$HttpRouter@URouterData@?$HttpContextData@$00@uWS@@@uWS@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::HttpRouter<uWS::HttpContextData<1>::RouterData>::Node::isHighPriority"
+          }
+        },
+        {
+          "ruleId": "C28020",
+          "level": "warning",
+          "message": {
+            "text": "表达式“0<=_Param_(1)&&_Param_(1)<=400-1”对此调用无效。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/output/serializer.hpp"
+                },
+                "region": {
+                  "startLine": 923,
+                  "startColumn": 28,
+                  "endLine": 923,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nlohmann::json_abi_v3_12_0::detail::serializer<nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void> >::decode",
+                  "decoratedName": "?decode@?$serializer@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@@detail@json_abi_v3_12_0@nlohmann@@CAEAEAEAEAIE@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/output/serializer.hpp"
+                          },
+                          "region": {
+                            "startLine": 902,
+                            "startColumn": 52
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/output/serializer.hpp"
+                          },
+                          "region": {
+                            "startLine": 923,
+                            "startColumn": 28
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@_N$0A@_K@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$00@uWS@@PEAUHttpRequest@2@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,us_listen_socket_t *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,us_listen_socket_t *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAUus_listen_socket_t@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,us_listen_socket_t *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$0A@@uWS@@PEAUHttpRequest@2@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<1>::RouterData> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<1>::RouterData> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@_N$0A@PEAU?$HttpRouter@URouterData@?$HttpContextData@$00@uWS@@@uWS@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<1>::RouterData> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<0>::RouterData> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<0>::RouterData> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@_N$0A@PEAU?$HttpRouter@URouterData@?$HttpContextData@$0A@@uWS@@@uWS@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<0>::RouterData> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void *,0,void *,uWS::HttpRequest *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void *,0,void *,uWS::HttpRequest *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@PEAX$0A@PEAXPEAUHttpRequest@uWS@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void *,0,void *,uWS::HttpRequest *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void *,0,void *,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void *,0,void *,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@PEAX$0A@PEAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@_K@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void *,0,void *,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@HV?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@W4OpCode@2@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *,us_socket_context_t *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *,us_socket_context_t *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$0A@@uWS@@PEAUHttpRequest@2@PEAUus_socket_context_t@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<0> *,uWS::HttpRequest *,us_socket_context_t *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@HV?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,int,int>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@W4OpCode@2@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *,us_socket_context_t *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *,us_socket_context_t *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$HttpResponse@$00@uWS@@PEAUHttpRequest@2@PEAUus_socket_context_t@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::HttpResponse<1> *,uWS::HttpRequest *,us_socket_context_t *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@V?$basic_string_view@DU?$char_traits@D@std@@@std@@_K@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,std::basic_string_view<char,std::char_traits<char> >,unsigned __int64>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@_N$0A@_K@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<bool,0,unsigned __int64>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 190,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@$$V@any_detail@ofats@@QEAA@$$T@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::resetIdleTimeoutOnSend。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$0A@UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::resetIdleTimeoutOnSend"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::maxLifetime。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$0A@UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::maxLifetime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::compression。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$0A@UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::compression"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::sendPingsAutomatically。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$0A@UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::sendPingsAutomatically"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::closeOnBackpressureLimit。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$0A@UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<0,rdc::SignalingServer::ConnectionContext>::closeOnBackpressureLimit"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::resetIdleTimeoutOnSend。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$00UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::resetIdleTimeoutOnSend"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::sendPingsAutomatically。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$00UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::sendPingsAutomatically"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::compression。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$00UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::compression"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::closeOnBackpressureLimit。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$00UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::closeOnBackpressureLimit"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::maxLifetime。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::{ctor}",
+                  "decoratedName": "??0?$WebSocketContextData@$00UConnectionContext@SignalingServer@rdc@@@uWS@@QEAA@PEAU?$TopicTree@UTopicTreeMessage@uWS@@UTopicTreeBigMessage@2@@1@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "uWS::WebSocketContextData<1,rdc::SignalingServer::ConnectionContext>::maxLifetime"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<0>::RouterData> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<0>::RouterData> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@_N$0A@PEAU?$HttpRouter@URouterData@?$HttpContextData@$0A@@uWS@@@uWS@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<0>::RouterData> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<1>::RouterData> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<1>::RouterData> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@_N$0A@PEAU?$HttpRouter@URouterData@?$HttpContextData@$00@uWS@@@uWS@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<bool,0,uWS::HttpRouter<uWS::HttpContextData<1>::RouterData> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26819",
+          "level": "warning",
+          "message": {
+            "text": "switch 标签之间的尾随 fallthrough (es.78)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/lexer.hpp"
+                },
+                "region": {
+                  "startLine": 869,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nlohmann::json_abi_v3_12_0::detail::lexer<nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>,nlohmann::json_abi_v3_12_0::detail::iterator_input_adapter<char const *> >::scan_comment",
+                  "decoratedName": "?scan_comment@?$lexer@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@V?$iterator_input_adapter@PEBD@detail@23@@detail@json_abi_v3_12_0@nlohmann@@AEAA_NXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26819",
+          "level": "warning",
+          "message": {
+            "text": "switch 标签之间的尾随 fallthrough (es.78)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/lexer.hpp"
+                },
+                "region": {
+                  "startLine": 906,
+                  "startColumn": 17,
+                  "endLine": 906,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nlohmann::json_abi_v3_12_0::detail::lexer<nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>,nlohmann::json_abi_v3_12_0::detail::iterator_input_adapter<char const *> >::scan_comment",
+                  "decoratedName": "?scan_comment@?$lexer@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@V?$iterator_input_adapter@PEBD@detail@23@@detail@json_abi_v3_12_0@nlohmann@@AEAA_NXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@W4OpCode@2@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$00$00UConnectionContext@SignalingServer@rdc@@@uWS@@HV?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<1,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@W4OpCode@2@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,std::basic_string_view<char,std::char_traits<char> >,enum uWS::OpCode>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAU?$WebSocket@$0A@$00UConnectionContext@SignalingServer@rdc@@@uWS@@HV?$basic_string_view@DU?$char_traits@D@std@@@std@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::WebSocket<0,1,rdc::SignalingServer::ConnectionContext> *,int,std::basic_string_view<char,std::char_traits<char> > >::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::Loop *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 189,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::Loop *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAULoop@uWS@@@any_detail@ofats@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::Loop *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26819",
+          "level": "warning",
+          "message": {
+            "text": "switch 标签之间的尾随 fallthrough (es.78)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/lexer.hpp"
+                },
+                "region": {
+                  "startLine": 869,
+                  "startColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nlohmann::json_abi_v3_12_0::detail::lexer<nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>,nlohmann::json_abi_v3_12_0::detail::iterator_input_adapter<std::_String_view_iterator<std::char_traits<char> > > >::scan_comment",
+                  "decoratedName": "?scan_comment@?$lexer@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@V?$iterator_input_adapter@V?$_String_view_iterator@U?$char_traits@D@std@@@std@@@detail@23@@detail@json_abi_v3_12_0@nlohmann@@AEAA_NXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26819",
+          "level": "warning",
+          "message": {
+            "text": "switch 标签之间的尾随 fallthrough (es.78)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/lexer.hpp"
+                },
+                "region": {
+                  "startLine": 906,
+                  "startColumn": 17,
+                  "endLine": 906,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nlohmann::json_abi_v3_12_0::detail::lexer<nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>,nlohmann::json_abi_v3_12_0::detail::iterator_input_adapter<std::_String_view_iterator<std::char_traits<char> > > >::scan_comment",
+                  "decoratedName": "?scan_comment@?$lexer@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@V?$iterator_input_adapter@V?$_String_view_iterator@U?$char_traits@D@std@@@std@@@detail@23@@detail@json_abi_v3_12_0@nlohmann@@AEAA_NXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@$$V@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 ofats::any_detail::any_invocable_impl<void,0,uWS::Loop *>::call_。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+                },
+                "region": {
+                  "startLine": 191,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ofats::any_detail::any_invocable_impl<void,0,uWS::Loop *>::{ctor}",
+                  "decoratedName": "??0?$any_invocable_impl@X$0A@PEAULoop@uWS@@@any_detail@ofats@@QEAA@$$QEAV012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ofats::any_detail::any_invocable_impl<void,0,uWS::Loop *>::call_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "未初始化变量 nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>::m_data。始终初始化成员变量(type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/json.hpp"
+                },
+                "region": {
+                  "startLine": 1149,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>::{ctor}",
+                  "decoratedName": "??$?0V?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@@detail@json_abi_v3_12_0@nlohmann@@$0A@@?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@QEAA@AEBV?$json_ref@V?$basic_json@Vmap@std@@Vvector@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@_N_J_KNVallocator@2@Uadl_serializer@json_abi_v3_12_0@nlohmann@@V?$vector@EV?$allocator@E@std@@@2@X@json_abi_v3_12_0@nlohmann@@@detail@12@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "nlohmann::json_abi_v3_12_0::basic_json<std::map,std::vector,std::basic_string<char,std::char_traits<char>,std::allocator<char> >,bool,__int64,unsigned __int64,double,std::allocator,nlohmann::json_abi_v3_12_0::adl_serializer,std::vector<unsigned char,std::allocator<unsigned char> >,void>::m_data"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33145.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/Loop.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "f7794d5e3475bc9c1c841d32943789e69f91758b362557ef4c8b71cb77290f81"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/ChunkedEncoding.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "7c98fc4e7bd9ba9892e32f94eb687c65fc72cd17111631cba44c76cb2323251f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpParser.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "35ace54045957b4042108688ed763b78ad257fcafc9d8851d780b0ef24fe0125"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/AsyncSocketData.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "28037864f6451bb0f172d19e86b7649cf36f8f79ee11f8cf0328b88654627e80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/TopicTree.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c24fb02005f7b348408c7ec14ecc11a30c99ebe26d5fa3c5c6a6aa331aa729ec"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketProtocol.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "5019346562e00c14dc976a38e8c83f726bf2d95b50ce1314be86eba695111027"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/MoveOnlyFunction.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c9ae25a11c5a24fc28e7bdb49a90fd5b16fc7e863bb5c4eaaea98228a4b9ba05"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/HttpRouter.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "8ded0be4f7fd1da15409d4bfb03b36b7a5cc619f92aeb5146242e4bbcce55f90"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/output/serializer.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "4c079acb8f6936c4f787fd5706a52c77a1751dd34787a821705845698ec8540e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/WebSocketContextData.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "b00e6f949d4f310774e5e0cb44c7122d7dd306074fdb66b55a1c93259a33cfae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/lexer.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "a8b73e55242731375c088133f3a355af7b1bb82d6b9531678cb20560d3733c1d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/RuanJian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/json.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "88d7eb42b19599cab48856576dd4ea52538df72ad7c57200c50de98bda246458"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/server/signaling_gateway/signaling_server.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "fb6254346a165b4d0c0ebbe03f67a6868a2cd4587e74c41711bc88f54b98be45"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/server/signaling_gateway/signaling_server.hpp"
+          },
+          "hashes": {
+            "sha-256": "c57806c9178c975a35cb6a494f5f45aebf92db056e3c74f3413c3b960ad90c8b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol.hpp"
+          },
+          "hashes": {
+            "sha-256": "53fcf0f5a47bbbadac22bde178f54bffc246c423cc1c5909f4aa91e928dc4c7c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/adl_serializer.hpp"
+          },
+          "hashes": {
+            "sha-256": "80742b0081e0ac5094ad4d7a3549e969b004bb7ed86807911a8177c843701262"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/abi_macros.hpp"
+          },
+          "hashes": {
+            "sha-256": "cebb5441f1ce851444f47a7d8ea0446339ee499df83215ebd873c8347a191bd7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/conversions/from_json.hpp"
+          },
+          "hashes": {
+            "sha-256": "c8ac5448a602b03d18c29eeae7eae989d1b5bed49ab3fbb5ff996fb7e8514d6b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/exceptions.hpp"
+          },
+          "hashes": {
+            "sha-256": "5c9b21e0a13ac0bab8dea676b9804d739dfd2adc24f036f97ab243ef70e2aae7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/value_t.hpp"
+          },
+          "hashes": {
+            "sha-256": "67ed7b164db48556bb4ae409a645401faba459081570f9b9f9ff977fd32c6114"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/macro_scope.hpp"
+          },
+          "hashes": {
+            "sha-256": "76012b860dc76e7c28efead61311d588596417f5b476fc20f762b1ad81858ae0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/detected.hpp"
+          },
+          "hashes": {
+            "sha-256": "d144ac2ab6bb92be35bfda7eec560b9d030760e4330b7f951a2aca63469488a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/void_t.hpp"
+          },
+          "hashes": {
+            "sha-256": "c340e7b148543b0abfd719ddbc3759e23c2feffc63656136a15fd80b98ca8bf8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/thirdparty/hedley/hedley.hpp"
+          },
+          "hashes": {
+            "sha-256": "1547b367895f8be9f8283ae21f583182db572ad990236220002b632a15238712"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/string_escape.hpp"
+          },
+          "hashes": {
+            "sha-256": "cb12b0e5903b1ec90aaa96a4a71e0cf7106440ca9cedcff6495677d01f244733"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/position_t.hpp"
+          },
+          "hashes": {
+            "sha-256": "0239037872b622a5f3f42fa1b453d201f977d21829b2dc4a19abe2594515eada"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/cpp_future.hpp"
+          },
+          "hashes": {
+            "sha-256": "71e606c586174ff875f5996a00bc6e84a49e0919eafd6fb38c7cb928dfdf5795"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/type_traits.hpp"
+          },
+          "hashes": {
+            "sha-256": "d5da966796c089fa89cba5474309fd2124b083d99adf17991084a6a532fdf55d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/iterators/iterator_traits.hpp"
+          },
+          "hashes": {
+            "sha-256": "960d1fefbe7cb220292b07e4ec047bfa9a3ccbd753adaf62e5d583f746e71e47"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/call_std/begin.hpp"
+          },
+          "hashes": {
+            "sha-256": "4629b547aa6b6629c266b1b474f576cbde5ce898c96502c828a72d99212b9f34"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/call_std/end.hpp"
+          },
+          "hashes": {
+            "sha-256": "e09dd80f2263ff192d60bad19bdbdc5402866d0b0c8caeb9c2759b26ba864a39"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/json_fwd.hpp"
+          },
+          "hashes": {
+            "sha-256": "8777a878c20a412dd04c8011c87c3d72d74e48a4dda5e52f7948e26dd2168931"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/string_concat.hpp"
+          },
+          "hashes": {
+            "sha-256": "fb30fb50c325a1b5610a62a9061a1966b4e850dd964635c1ad1c4c9da48f7daa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/identity_tag.hpp"
+          },
+          "hashes": {
+            "sha-256": "37ff788879d4b14ffa2e79bdc75b470d2c2ca5ebadafef649312f653455d45fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/std_fs.hpp"
+          },
+          "hashes": {
+            "sha-256": "257716f0958e9fd6c1dc3f0335716d779550353c58bc929e8dda1c79bd336701"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/conversions/to_json.hpp"
+          },
+          "hashes": {
+            "sha-256": "8cc8523b7ba2b549a0a08a0611765155a63ee81653ad3e414decfd656a520a56"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/iterators/iteration_proxy.hpp"
+          },
+          "hashes": {
+            "sha-256": "3c562f1783e1fc9476ed53d8054bc50309caa425d993996a9ddf9194fb2129cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/string_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "85e2fbdfe07f1a44b90d5422ee1b951d1053f32e429dc4aee36274fb03fd9354"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/byte_container_with_subtype.hpp"
+          },
+          "hashes": {
+            "sha-256": "2b75a051d2f82fd95f613c70472b85a281d085f1973791c1118244099bf38942"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/hash.hpp"
+          },
+          "hashes": {
+            "sha-256": "a025807281c5d92fdfddcc993b2b2a9658146435cc10b003723b130698445c80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/binary_reader.hpp"
+          },
+          "hashes": {
+            "sha-256": "9e617825317910352f2a2025bb8749898287fa3003e81ce22a57b52c535d0eab"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/input_adapters.hpp"
+          },
+          "hashes": {
+            "sha-256": "01fa7af8fdd1ba7b1c12089bf92783f70d09a93db7564e4df70544fc85304de6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/json_sax.hpp"
+          },
+          "hashes": {
+            "sha-256": "0ed6fdb0ef91f163cca312b7ffd6e0842f12e1b8340204ab2d0c05277e0d1f18"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/meta/is_sax.hpp"
+          },
+          "hashes": {
+            "sha-256": "e60398b282767374747db20ab06101804c7345eea0761a313a298bf87b913f91"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/input/parser.hpp"
+          },
+          "hashes": {
+            "sha-256": "b4a762967b174de0c43896b465e4a7c8c92c3a8636f669debdec836050f7912a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/iterators/internal_iterator.hpp"
+          },
+          "hashes": {
+            "sha-256": "bf015623518c5aab4762d9a4d21af0e85a26cdcb3fc6e69e464c8575a3b87aba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/iterators/primitive_iterator.hpp"
+          },
+          "hashes": {
+            "sha-256": "40a03177d519ba378e59bed0a53a9be8022fd3d0ee701409781c0e856d5bf510"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/iterators/iter_impl.hpp"
+          },
+          "hashes": {
+            "sha-256": "c6f0664c4965287154505837dde4ae13e7625978745e8876951fc90da61b5068"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/iterators/json_reverse_iterator.hpp"
+          },
+          "hashes": {
+            "sha-256": "6f072fb2b9e151ad9645cb03a9aa23231480bf447e53b2e0ecb41f45fb7503e1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/json_custom_base_class.hpp"
+          },
+          "hashes": {
+            "sha-256": "e622910868b019ba09460c96a6092c1018ed501f34cce4ed633641400c2d2500"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/json_pointer.hpp"
+          },
+          "hashes": {
+            "sha-256": "9c5b54a455e96c63788c157d914b70cde6a3f36ef1e5df037f4fc17bb92f235d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/json_ref.hpp"
+          },
+          "hashes": {
+            "sha-256": "5d133945d0859acaa82c50c1a044b1e1f806c0a38107eae24bf07ff5944fc1e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/output/binary_writer.hpp"
+          },
+          "hashes": {
+            "sha-256": "cdf56265d14b80505796dfb94d79896a226e8888e4f730ff6e92c31a2b891cd1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/output/output_adapters.hpp"
+          },
+          "hashes": {
+            "sha-256": "3322dce8f63e69930806bd8691c2cd9ece8a76b54b34f617641329c44559bbb5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/conversions/to_chars.hpp"
+          },
+          "hashes": {
+            "sha-256": "20b9bc4469ee490bc626d8dbcdee060a494292473df4bdbcecfe2f2145ed562d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/ordered_map.hpp"
+          },
+          "hashes": {
+            "sha-256": "2d4e2d9f6e6a0c2d2adadcb620da1f49585fa4e54e54cfa16b6d20e01d857d61"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/detail/macro_unscope.hpp"
+          },
+          "hashes": {
+            "sha-256": "626b7e10290a2bb558634b8bbfbc5118b5ce696151b5bc87418142c578bd501e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/nlohmann/thirdparty/hedley/hedley_undef.hpp"
+          },
+          "hashes": {
+            "sha-256": "ddf06784ca9448b4899db96a409ec1cbc65a0f682db9c966c011f00b77ae75c4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/server/audit/server_logger.hpp"
+          },
+          "hashes": {
+            "sha-256": "de94c62e3185fd769091447d7f34f18a5cf6c5d1b224b102844a72d5ec042063"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/server/transport/server_config.hpp"
+          },
+          "hashes": {
+            "sha-256": "9dce9c69b4b3b6936b938e7e720dc8d295b64d829f65b177a1d304c87871463b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/app.h"
+          },
+          "hashes": {
+            "sha-256": "79606c0a7f225dfa6d11cbddbf6b27bda4bbce4b054aaed11bf55ab85858f706"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/httpcontext.h"
+          },
+          "hashes": {
+            "sha-256": "f48b787eb11cff4f508d5412830c1596144ff23fdc3d8488842b09f825ec3e7f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/loopdata.h"
+          },
+          "hashes": {
+            "sha-256": "59b5f8b2a13309d3bf7064779e04a6b882b9ae6d1ce66e4ea50a56247f595c82"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/permessagedeflate.h"
+          },
+          "hashes": {
+            "sha-256": "70e127c9715ee5fe94d8562e2636b2d8f86a4b77198bd476d73237a6e8912c22"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/zlib.h"
+          },
+          "hashes": {
+            "sha-256": "8a5579af72ea4f427ff00a4150f0ccb3fc5c1e4379f726e101133b1ab9fc600c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/zconf.h"
+          },
+          "hashes": {
+            "sha-256": "8e6b6dd7046d7528a935d19162822702f0b7aa53e0b16871ce306f391938cb21"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/libusockets.h"
+          },
+          "hashes": {
+            "sha-256": "e1c52056ab096e3f64bad1fef58335b3e8c0721ce87722d6baa0308587cd8a80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/httpcontextdata.h"
+          },
+          "hashes": {
+            "sha-256": "1ebf86d75c0c748847dd40e89b4910cdc20a5c97084072b5dd1da098525ed50b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/httpresponsedata.h"
+          },
+          "hashes": {
+            "sha-256": "5059dd8beeac7d2062820c8f040a062aab23996c05449789237445be47cad6d1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/bloomfilter.h"
+          },
+          "hashes": {
+            "sha-256": "77c32bb26d54b49988f9a747b42a5be125a4c2224df8e6cc83333393a3572db6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/proxyparser.h"
+          },
+          "hashes": {
+            "sha-256": "d63f27e8507d4260596b6c6887d7b4bdf2ac460c16f3f5b7376935887ee0d1e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/queryparser.h"
+          },
+          "hashes": {
+            "sha-256": "87debaf12d45bf1a76ed3c04f0e95db39d4be7b348b1afa5add3809d74c674c9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/httperrors.h"
+          },
+          "hashes": {
+            "sha-256": "96510315ef3a5c4b30991ff519e4964307375f732e3e2007efb3925bbc266705"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/asyncsocket.h"
+          },
+          "hashes": {
+            "sha-256": "d90296351c7d1589596f8ff96e4c630934f9cf4c4e9264fdb929da8944a19376"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/websocketdata.h"
+          },
+          "hashes": {
+            "sha-256": "4bf3385ee9f7a7ea2bbd5e899ba049439c7ad0b4b418f4a25ee1bac367ca81fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/httpresponse.h"
+          },
+          "hashes": {
+            "sha-256": "aa7c3ec92561ebccbf3c6cb02784461e167655cd1f4ca25991c5b30c0d3b1df8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/utilities.h"
+          },
+          "hashes": {
+            "sha-256": "948614136e7edf4a0a413dcff1182e3ba5bee0f9a147958a0da37329903525cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/websocketextensions.h"
+          },
+          "hashes": {
+            "sha-256": "bcb56a39fa0e0700bd4112e8df36b2c16b29b1e75d39361e2ccd1b3e903a267d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/websockethandshake.h"
+          },
+          "hashes": {
+            "sha-256": "4ef537f1c444ae07c14ad5d051a909f3cf8d752168a83da6180d3d4c3608cc6e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/websocket.h"
+          },
+          "hashes": {
+            "sha-256": "e63e835afc2ebf936b3b30aba7d756a2be26e9659240dcfe8612f84209121207"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/uwebsockets/websocketcontext.h"
+          },
+          "hashes": {
+            "sha-256": "fa6b1b5d7de3f07890364e4dfddeabf172c3155a4dc0ffd5f6a2e69fe3f62822"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/controller/ui/browser_controller_assets.hpp"
+          },
+          "hashes": {
+            "sha-256": "024ad836384eadada0c27a47ae972c797d5f49a8fb51d06b7a570a05d6e0e0db"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol/common/json_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "0703586c4f60fc1da1c95e231d195e1f87a07814f4e7ada2c6e0e58e7e9253e4"
+          }
+        }
+      ]
+    }
+  ]
+}

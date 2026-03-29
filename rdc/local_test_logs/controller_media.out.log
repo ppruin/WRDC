@@ -1,0 +1,21 @@
+mimalloc 版本: 225
+controller connecting to ws://127.0.0.1:5000/signal as user user-1, target device host-1
+controller signaling <- {"connectionId":"conn_2","message":"register as host or controller to begin","type":"hello"}
+controller registered, creating session
+controller session created: sess_1
+[peer:controller][sess_1] starting peer session
+[peer:controller][sess_1] creating peer connection
+[peer:controller][sess_1] configured H.264 video track on mid video
+[peer:controller][sess_1] created control data channel
+2026-03-27 22:25:49.833 WARN  [66368] [rtc::PeerConnection::setLocalDescription@133] Unexpected local description in signaling state have-local-offer, ignoring
+[peer:controller][sess_1] requested local description
+[peer:controller][sess_1] peer connection state -> connecting
+2026-03-27 22:25:49.839 WARN  [46576] [rtc::impl::DtlsTransport::DtlsTransport@810] AES-GCM for SRTP is not supported, falling back to default profile
+[peer:controller][sess_1] track open -> video
+[peer:controller][sess_1] peer connection state -> connected
+[peer:controller][sess_1] data channel open -> control
+controller data <- [control] {"echoSeq":1,"type":"pong"}
+controller delaying close by 2000ms
+controller session ended <- 2026-03-27 22:25:52.893 WARN  [25748] [rtc::impl::Channel::triggerClosed@28] Uncaught exception in callback: resource deadlock would occur: resource deadlock would occur
+{"hostDeviceId":"host-1","reason":"ping_completed","sessionId":"sess_1","state":"closed","type":"session_closed"}[peer:
+controller][sess_1] data channel closed -> control

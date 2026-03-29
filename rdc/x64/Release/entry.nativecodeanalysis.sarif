@@ -1,0 +1,51 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33145.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/entry.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "c61b4b72ff39b8b545d55a512c918fbffcdb2f31a802954760844c8759c49cf6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/mimalloc/include/mimalloc.h"
+          },
+          "hashes": {
+            "sha-256": "ba55b184ec05ab465667c9ea764188d0e317fe279c2e88f9dee9e96110ceb602"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol/common/console_logger.hpp"
+          },
+          "hashes": {
+            "sha-256": "c93454c533348bca76d57f2d5b0dc7bde6340d04c87f9f559cb2bc3d1c52d187"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\RuanJian\mimalloc\include\</FILEPATH>
+      <FILENAME>mimalloc-new-delete.h</FILENAME>
+      <LINE>61</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>“new”的批注不一致: 此实例包含 无批注。请参见 c:\program files\microsoft visual studio\2022\enterprise\vc\tools\msvc\14.38.33130\include\vcruntime_new.h(105)。</DESCRIPTION>
+    <FUNCTION>new</FUNCTION>
+    <DECORATED>??2@YAPEAX_KW4align_val_t@std@@AEBUnothrow_t@1@@Z</DECORATED>
+    <FUNCLINE>61</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\RuanJian\mimalloc\include\</FILEPATH>
+      <FILENAME>mimalloc-new-delete.h</FILENAME>
+      <LINE>62</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>“new[]”的批注不一致: 此实例包含 无批注。请参见 c:\program files\microsoft visual studio\2022\enterprise\vc\tools\msvc\14.38.33130\include\vcruntime_new.h(119)。</DESCRIPTION>
+    <FUNCTION>new[]</FUNCTION>
+    <DECORATED>??_U@YAPEAX_KW4align_val_t@std@@AEBUnothrow_t@1@@Z</DECORATED>
+    <FUNCLINE>62</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

@@ -1,0 +1,19 @@
+mimalloc version: 225
+controller connecting to ws://127.0.0.1:8443/signal as user user-1, target device host-1
+controller signaling <- {"connectionId":"conn_2","message":"register as host or controller to begin","type":"hello"}
+controller registered, creating session
+controller session created: sess_1
+[peer:controller][sess_1] starting peer session
+[peer:controller][sess_1] creating peer connection
+2026-03-27 21:32:23.018 WARN  [15984] [rtc::impl::PeerConnection::emplaceTrack@787] Tracks are disabled (not compiled with media support)
+[peer:controller][sess_1] configured H.264 video track on mid video
+[peer:controller][sess_1] created control data channel
+2026-03-27 21:32:23.029 WARN  [15984] [rtc::PeerConnection::setLocalDescription@133] Unexpected local description in signaling state have-local-offer, ignoring
+[peer:controller][sess_1] requested local description
+[peer:controller][sess_1] peer connection state -> connecting
+[peer:controller][sess_1] peer connection state -> connected
+[peer:controller][sess_1] data channel open -> control
+controller data <- [control] {"echoSeq":1,"type":"pong"}
+controller delaying close by 1500ms
+[peer:controller session ended <- controller][sess_1] data channel closed -> control
+{"hostDeviceId":"host-1","reason":"ping_completed","sessionId":"sess_1","state":"closed","type":"session_closed"}

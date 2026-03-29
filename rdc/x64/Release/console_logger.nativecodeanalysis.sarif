@@ -1,0 +1,83 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33145.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol/common/console_logger.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "c549204d008e28cfebfc9a5448178fc7329d7386e5fb0541fd07ea2819822aa1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol/common/console_logger.hpp"
+          },
+          "hashes": {
+            "sha-256": "c93454c533348bca76d57f2d5b0dc7bde6340d04c87f9f559cb2bc3d1c52d187"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/rtc/global.hpp"
+          },
+          "hashes": {
+            "sha-256": "75f6eed13339eab58b13c9a776fd2fa83478d6854aeb6d926b0adb4942c87050"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/rtc/common.hpp"
+          },
+          "hashes": {
+            "sha-256": "b21daf50bdb3fc807e3c6d3aa9a845f1963a446d2365d86f7b4325e995de3135"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/rtc/rtc.h"
+          },
+          "hashes": {
+            "sha-256": "22621d81448117b03d29c0cc53595cc63e3cdfb74561ad5cf2899bdecaed8a81"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/rtc/version.h"
+          },
+          "hashes": {
+            "sha-256": "8bd96c144404403c4dce03150abaceabd4c87c3619c83efd8515c1ee7c958f77"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/vcpkg_installed/x64-windows/x64-windows/include/rtc/utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "182494c8d35f87eb12ed1ee41f9fbc9c76d787bc5613dd126ac00ba8ea8e6c40"
+          }
+        }
+      ]
+    }
+  ]
+}

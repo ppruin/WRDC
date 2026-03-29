@@ -1,0 +1,3 @@
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\rdc.vcxproj.Up2Date
+C:\RuanJian\remote_desktop_connection\rdc\x64\Release\rdc.exe.lastcodeanalysissucceeded
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\NativeCodeAnalysis.read.1.tlog

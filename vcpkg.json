@@ -1,0 +1,19 @@
+{
+  "dependencies": [
+    {
+      "name": "uwebsockets",
+      "features": [ "ssl", "zlib" ]
+    },
+    {
+      "name": "libdatachannel",
+      "features": [ "srtp" ]
+    },
+    {
+      "name": "x264",
+      "features": [ "chroma-format-all" ]
+    },
+    {
+      "name": "openh264"
+    }
+  ]
+}

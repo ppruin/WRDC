@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="其他文件">
+      <UniqueIdentifier>{73F59DB0-1EBE-6D76-EB40-E29B3DDC4D79}</UniqueIdentifier>
+      <Extensions>txt;md;json;yml;yaml;xml;toml</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{8F341685-5A9C-DE70-DA74-42CB0A9873EF}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="头文件\agent">
+      <UniqueIdentifier>{FFFFF5B1-E11B-FAD0-B281-F9A4153276A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\agent\capture">
+      <UniqueIdentifier>{E75F8B55-1B19-E0EF-3478-13245E49C6E5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\agent\encoder">
+      <UniqueIdentifier>{B7AAAD4C-BD02-ED52-4417-D407E7BF7441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\agent\platform">
+      <UniqueIdentifier>{D4072BD9-730A-D32F-3772-B260CE210158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\agent\platform\windows">
+      <UniqueIdentifier>{1557E57C-5A54-85CD-B804-D48BF8B06F93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\agent\rtc">
+      <UniqueIdentifier>{A6C6A504-3261-8C66-8A94-9E9F8B98BFEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\agent\session">
+      <UniqueIdentifier>{98EEA44F-8632-A256-7303-848851827062}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\controller">
+      <UniqueIdentifier>{B4CA8230-ABD5-AEAF-7C2C-5B589E766DF6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\controller\renderer">
+      <UniqueIdentifier>{ED628B2F-DF10-8451-E605-B9D79C3832AA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\controller\rtc">
+      <UniqueIdentifier>{83E93242-407E-F9B0-EEE6-A5FFBB9A7A17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\controller\ui">
+      <UniqueIdentifier>{1D29F9EE-3894-BFFA-2283-ADE2C4775E4A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\protocol">
+      <UniqueIdentifier>{FCEA8129-C762-5854-52DE-E1803C3EB534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\protocol\common">
+      <UniqueIdentifier>{68601D33-1B61-870A-E5EC-29F38EC889C5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\protocol\control">
+      <UniqueIdentifier>{4F81C810-C9B6-CFE1-93D1-804EC5627623}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\protocol\signaling">
+      <UniqueIdentifier>{81D343BB-B981-F4CA-EC24-724505199CD7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\server">
+      <UniqueIdentifier>{8765BD75-8783-0738-F831-8D63B490470E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\server\audit">
+      <UniqueIdentifier>{A3A55E79-5169-610F-85B5-8AED45F95B16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\server\signaling_gateway">
+      <UniqueIdentifier>{BFA454A9-95C5-5D4E-E516-98689909F190}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\server\transport">
+      <UniqueIdentifier>{E4C97C38-1156-234D-F96F-94C4414734D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{A62A8748-5B6F-01E6-5ED7-F03CFBD5DE1C}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="源文件\agent">
+      <UniqueIdentifier>{EA0EA75C-D465-20AE-E2A0-3C0646557F7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\agent\encoder">
+      <UniqueIdentifier>{4028D67A-692A-201F-C838-AF85CED4C07A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\agent\platform">
+      <UniqueIdentifier>{1C57207D-BD76-3C0F-0FDA-8D5D0E86A8A4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\agent\platform\windows">
+      <UniqueIdentifier>{FA2B3255-6F33-33A3-0E29-21560CAD80B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\agent\rtc">
+      <UniqueIdentifier>{8EC7E988-81A7-3937-3CDE-B2B52C038C0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\agent\session">
+      <UniqueIdentifier>{788BF726-6454-B0BA-0704-EA93F5134A2A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\controller">
+      <UniqueIdentifier>{2A78F7C4-CDD3-F982-FAF2-435EADC4A25B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\controller\renderer">
+      <UniqueIdentifier>{1196E267-4473-3468-BB04-9A9F6CB3CE8B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\controller\rtc">
+      <UniqueIdentifier>{C2212952-3C2B-66DA-BC33-226D302DB483}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\controller\ui">
+      <UniqueIdentifier>{605FDB82-3741-2341-368F-F7287F3E6B64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\protocol">
+      <UniqueIdentifier>{34B1D9A6-36E0-B02F-B812-960B060434F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\protocol\common">
+      <UniqueIdentifier>{DA10BD03-C870-B035-0F90-3AC7A32D17F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\server">
+      <UniqueIdentifier>{A688B520-8717-3AB9-8D2D-4703038FCB5A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\server\audit">
+      <UniqueIdentifier>{5F688DD1-7BFC-BE7F-C890-CFE864746332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\server\signaling_gateway">
+      <UniqueIdentifier>{EF29FD0F-D774-D2DB-1117-CB86F8226E92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{05EFBCD2-D8F3-F67B-8546-22D56A6E189D}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="agent\encoder\bgra_to_nv12_converter.cpp">
+      <Filter>源文件\agent\encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\main.cpp">
+      <Filter>源文件\agent</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\platform\windows\d3d11_desktop_frame_reader.cpp">
+      <Filter>源文件\agent\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\platform\windows\dxgi_desktop_duplicator.cpp">
+      <Filter>源文件\agent\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\platform\windows\x264_h264_encoder.cpp">
+      <Filter>源文件\agent\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\rtc\peer_session.cpp">
+      <Filter>源文件\agent\rtc</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\session\desktop_streamer.cpp">
+      <Filter>源文件\agent\session</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\session\host_client.cpp">
+      <Filter>源文件\agent\session</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\main.cpp">
+      <Filter>源文件\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\renderer\desktop_window_renderer.cpp">
+      <Filter>源文件\controller\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\renderer\openh264_video_decoder.cpp">
+      <Filter>源文件\controller\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\rtc\controller_client.cpp">
+      <Filter>源文件\controller\rtc</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\ui\browser_controller_assets.cpp">
+      <Filter>源文件\controller\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="entry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mimalloc_override.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protocol\common\console_logger.cpp">
+      <Filter>源文件\protocol\common</Filter>
+    </ClCompile>
+    <ClCompile Include="protocol\common\win_websocket_client.cpp">
+      <Filter>源文件\protocol\common</Filter>
+    </ClCompile>
+    <ClCompile Include="server\audit\server_logger.cpp">
+      <Filter>源文件\server\audit</Filter>
+    </ClCompile>
+    <ClCompile Include="server\main.cpp">
+      <Filter>源文件\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\signaling_gateway\signaling_server.cpp">
+      <Filter>源文件\server\signaling_gateway</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="agent\capture\desktop_capturer.hpp">
+      <Filter>头文件\agent\capture</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\capture\desktop_frame.hpp">
+      <Filter>头文件\agent\capture</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\encoder\bgra_to_nv12_converter.hpp">
+      <Filter>头文件\agent\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\encoder\encoded_video_frame.hpp">
+      <Filter>头文件\agent\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\encoder\nv12_video_frame.hpp">
+      <Filter>头文件\agent\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\encoder\raw_video_frame.hpp">
+      <Filter>头文件\agent\encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\platform\windows\d3d11_desktop_frame_reader.hpp">
+      <Filter>头文件\agent\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\platform\windows\dxgi_desktop_duplicator.hpp">
+      <Filter>头文件\agent\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\platform\windows\mf_h264_encoder.hpp">
+      <Filter>头文件\agent\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\platform\windows\x264_h264_encoder.hpp">
+      <Filter>头文件\agent\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\rtc\peer_session.hpp">
+      <Filter>头文件\agent\rtc</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\session\desktop_streamer.hpp">
+      <Filter>头文件\agent\session</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\session\host_client.hpp">
+      <Filter>头文件\agent\session</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\renderer\decoded_video_frame.hpp">
+      <Filter>头文件\controller\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\renderer\desktop_window_renderer.hpp">
+      <Filter>头文件\controller\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\renderer\openh264_video_decoder.hpp">
+      <Filter>头文件\controller\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\rtc\controller_client.hpp">
+      <Filter>头文件\controller\rtc</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\rtc\h264_rtp_depacketizer.hpp">
+      <Filter>头文件\controller\rtc</Filter>
+    </ClInclude>
+    <ClInclude Include="controller\ui\browser_controller_assets.hpp">
+      <Filter>头文件\controller\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\common\buffer_utils.hpp">
+      <Filter>头文件\protocol\common</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\common\console_logger.hpp">
+      <Filter>头文件\protocol\common</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\common\json_types.hpp">
+      <Filter>头文件\protocol\common</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\common\json_utils.hpp">
+      <Filter>头文件\protocol\common</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\common\rtc_handle_utils.hpp">
+      <Filter>头文件\protocol\common</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\common\video_convert_utils.hpp">
+      <Filter>头文件\protocol\common</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\common\win_websocket_client.hpp">
+      <Filter>头文件\protocol\common</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\control\control_protocol.hpp">
+      <Filter>头文件\protocol\control</Filter>
+    </ClInclude>
+    <ClInclude Include="protocol\signaling\signaling_protocol.hpp">
+      <Filter>头文件\protocol\signaling</Filter>
+    </ClInclude>
+    <ClInclude Include="server\audit\server_logger.hpp">
+      <Filter>头文件\server\audit</Filter>
+    </ClInclude>
+    <ClInclude Include="server\signaling_gateway\signaling_server.hpp">
+      <Filter>头文件\server\signaling_gateway</Filter>
+    </ClInclude>
+    <ClInclude Include="server\transport\server_config.hpp">
+      <Filter>头文件\server\transport</Filter>
+    </ClInclude>
+    <ClInclude Include="signal_socket.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="agent\platform\windows\mf_h264_encoder.cpp">
+      <Filter>源文件\agent\platform\windows</Filter>
+    </None>
+    <None Include="signal_socket.cpp">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

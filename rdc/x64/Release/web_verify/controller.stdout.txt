@@ -1,0 +1,25 @@
+mimalloc 版本: 225
+控制端正在连接 ws://127.0.0.1:5000/signal，用户 ID: user-1，目标设备 ID: host-1
+控制端收到信令 <- {"connectionId":"conn_2","message":"register as host or controller to begin","type":"hello"}
+控制端注册完成，开始创建会话
+控制端会话已创建: sess_1
+[peer:控制端][sess_1] 开始创建会话链路
+[peer:控制端][sess_1] 正在创建 PeerConnection
+[peer:控制端][sess_1] 已配置 H.264 视频轨，mid=video
+[peer:控制端][sess_1] 已创建控制数据通道
+[peer:控制端][sess_1] 已请求本地描述
+[peer:控制端][sess_1] PeerConnection 状态 -> 连接中
+[peer:控制端][sess_1] 媒体轨已打开 -> video
+[peer:控制端][sess_1] PeerConnection 状态 -> 已连接
+[peer:控制端][sess_1] 数据通道已打开 -> control
+控制端数据 <- [control] {"echoSeq":1,"type":"pong"}
+控制端延迟 1000ms 后关闭会话
+[peer:控制端][sess_1] 在 video 视频轨上收到媒体负载, 样本序号=1, 字节数=36
+[peer:控制端][sess_1] 在 video 视频轨上收到媒体负载, 样本序号=2, 字节数=16
+[peer:控制端][sess_1] 在 video 视频轨上收到媒体负载, 样本序号=3, 字节数=712
+[peer:控制端][sess_1] 在 video 视频轨上收到媒体负载, 样本序号=4, 字节数=1218
+[peer:控制端][sess_1] 在 video 视频轨上收到媒体负载, 样本序号=5, 字节数=1218
+控制端已显示首帧远端画面: 2560x1440
+[peer:控制端][sess_1] 在 video 视频轨上收到媒体负载, 样本序号=60, 字节数=1210
+[peer:控制端][sess_1] 在 video 视频轨上收到媒体负载, 样本序号=120, 字节数=1175
+控制端会话结束 <- {"hostDeviceId":"host-1","reason":"ping_completed","sessionId":"sess_1","state":"closed","type":"session_closed"}

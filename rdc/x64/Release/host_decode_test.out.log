@@ -1,0 +1,29 @@
+mimalloc 版本: 225
+主机端正在连接 ws://127.0.0.1:5000/signal，设备 ID: host-1
+主机端收到信令 <- {"connectionId":"conn_9","message":"register as host or controller to begin","type":"hello"}
+主机端收到信令 <- {"connectionId":"conn_9","deviceId":"host-1","role":"host","type":"registered"}
+主机端接受会话 sess_5
+[peer:主机端][sess_5] 开始创建会话链路
+[peer:主机端][sess_5] 正在创建 PeerConnection
+[peer:主机端][sess_5] 已配置 H.264 视频轨，mid=video
+主机端忽略信令负载 <- {"hostDeviceId":"host-1","sessionId":"sess_5","state":"signaling","type":"session_accepted"}
+[peer:主机端][sess_5] PeerConnection 状态 -> 连接中
+[peer:主机端][sess_5] 媒体轨已打开 -> video
+[peer:主机端][sess_5] 在 video 上收到 PLI，已安排下一帧输出关键帧
+[peer:主机端][sess_5] 在 video 视频轨上收到反馈包, 包序号=1, 字节数=12
+[peer:主机端][sess_5] PeerConnection 状态 -> 已连接
+[peer:主机端][sess_5] 已接受传入数据通道: control
+[peer:主机端][sess_5] 数据通道已打开 -> control
+主机端数据 <- [control] {"seq":1,"ts":1774668344,"type":"ping"}
+桌面推流器已捕获首帧桌面图像: 2560x1440, 脏矩形=0, 位移矩形=0
+[peer:主机端][sess_5] 在 video 视频轨上收到反馈包, 包序号=2, 字节数=32
+[peer:主机端][sess_5] 已在 video 视频轨上发送编码桌面帧, 帧序号=1, 字节数=11594, 关键帧=是
+[peer:主机端][sess_5] 已在 video 视频轨上发送编码桌面帧, 帧序号=2, 字节数=49200, 关键帧=否
+[peer:主机端][sess_5] 已在 video 视频轨上发送编码桌面帧, 帧序号=3, 字节数=1484, 关键帧=否
+[peer:主机端][sess_5] 已在 video 视频轨上发送编码桌面帧, 帧序号=4, 字节数=4040, 关键帧=否
+[peer:主机端][sess_5] 已在 video 视频轨上发送编码桌面帧, 帧序号=5, 字节数=32646, 关键帧=否
+[peer:主机端][sess_5] 在 video 视频轨上收到反馈包, 包序号=3, 字节数=32
+[peer:主机端][sess_5] 在 video 视频轨上收到反馈包, 包序号=4, 字节数=32
+[peer:主机端][sess_5] 已在 video 视频轨上发送编码桌面帧, 帧序号=60, 字节数=18243, 关键帧=否
+[peer:主机端][sess_5] 在 video 视频轨上收到反馈包, 包序号=5, 字节数=32
+[peer:主机端][sess_5] 已在 video 视频轨上发送编码桌面帧, 帧序号=120, 字节数=12338, 关键帧=否

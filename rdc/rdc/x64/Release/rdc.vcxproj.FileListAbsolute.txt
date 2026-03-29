@@ -1,0 +1,8 @@
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\datachannel.dll
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\srtp2.dll
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\libssl-3-x64.dll
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\libcrypto-3-x64.dll
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\juice.dll
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\uv.dll
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\zlib1.dll
+C:\RuanJian\remote_desktop_connection\rdc\rdc\x64\Release\libx264-164.dll

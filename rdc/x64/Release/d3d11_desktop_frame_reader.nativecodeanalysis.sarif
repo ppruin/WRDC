@@ -1,0 +1,67 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33145.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/agent/platform/windows/d3d11_desktop_frame_reader.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "e0b1db70d09b9465c503c6f8317898d977c2a7ba495f015f3f950ba392d5958c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/agent/platform/windows/d3d11_desktop_frame_reader.hpp"
+          },
+          "hashes": {
+            "sha-256": "3705b4a364e4de8d89131cfccccf9c074bc3b5213c7ae1b07188bd5f51565f58"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/agent/capture/desktop_frame.hpp"
+          },
+          "hashes": {
+            "sha-256": "1d8667e515a4587711a39f63a447235413c5e6b61fa797903e7e443c65c104c8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/agent/encoder/raw_video_frame.hpp"
+          },
+          "hashes": {
+            "sha-256": "1c761e9a830affcfcbc3c20fbfe859688b1c892e7a1cf843ebab40e1a0e4e457"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/ruanjian/remote_desktop_connection/rdc/rdc/protocol/common/buffer_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "0296ba9eb9e996c924f09429c13167708de95832018e298946e1651f9351264a"
+          }
+        }
+      ]
+    }
+  ]
+}

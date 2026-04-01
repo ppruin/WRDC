@@ -1,0 +1,14 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/解决方案项/">
+    <File Path="vcpkg.json" />
+  </Folder>
+  <Project Path="../../mimalloc/ide/vs2022/mimalloc-lib.vcxproj" Id="abb5eae7-b3e6-432e-b636-333449892ea6" />
+  <Project Path="imgui-1.92.6/examples/example_win32_directx12/example_win32_directx12.vcxproj" Id="b4cf9797-519d-4afe-a8f4-5141a6b521d3" />
+  <Project Path="rdc/rdc.vcxproj" Id="e49f8de1-2a18-4989-a24d-a04bc5408611">
+    <BuildDependency Project="imgui-1.92.6/examples/example_win32_directx12/example_win32_directx12.vcxproj" />
+  </Project>
+</Solution>

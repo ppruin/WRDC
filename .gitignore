@@ -1,0 +1,19 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/vcpkg_installed/x64-windows
+/x64
+/LICENSE.txt
+/imgui-1.92.6
+/resouce
+/rdc/rdc
+/rdc/x64
+/rdc/docs
+/rdc/Debug
+/rdc/Release
+/rdc/local_test_logs
+/Debug
+/Release
+

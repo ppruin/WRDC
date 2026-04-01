@@ -3,7 +3,7 @@
 # 依赖
 - mimalloc 的 VS 工程源码
 - ImGUI 的 DX12 版本的 VS 工程源码
-- vcpkg 进行了部分包管理器
+- vcpkg 进行了部分包管理器，以下是 vcpkg.json
   ```
   {
     "dependencies": [

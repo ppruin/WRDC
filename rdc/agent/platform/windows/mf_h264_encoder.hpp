@@ -14,23 +14,13 @@
  * @brief 描述 Media Foundation 编码器组件句柄。
  */
 struct IMFTransform;
+struct ICodecAPI;
 
+#include "h264_encoder_types.hpp"
 #include "../../encoder/encoded_video_frame.hpp"
 #include "../../encoder/nv12_video_frame.hpp"
 
 namespace rdc::agent::platform::windows {
-
-/**
- * @brief 描述 H264EncoderConfig 的配置项。
- */
-struct H264EncoderConfig {
-    std::uint32_t width = 0;
-    std::uint32_t height = 0;
-    std::uint32_t fps_num = 30;
-    std::uint32_t fps_den = 1;
-    std::uint32_t bitrate = 4'000'000;
-    std::uint32_t gop_size = 60;
-};
 
 /**
  * @brief 封装 MfH264Encoder 相关的编码流程。
@@ -58,6 +48,11 @@ public:
      * @return 返回结果集合。
      */
     std::vector<encoder::EncodedVideoFrame> Drain();
+
+    /**
+     * @brief 请求下一帧输出关键帧。
+     */
+    void RequestKeyframe();
 
 private:
     /**
@@ -96,6 +91,7 @@ private:
 
     H264EncoderConfig config_;
     Microsoft::WRL::ComPtr<IMFTransform> transform_;
+    Microsoft::WRL::ComPtr<ICodecAPI> codec_api_;
     std::int64_t next_sample_time_hns_ = 0;
     std::int64_t frame_duration_hns_ = 0;
     bool stream_started_ = false;

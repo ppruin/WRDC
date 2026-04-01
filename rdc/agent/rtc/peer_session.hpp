@@ -5,12 +5,15 @@
 
 #pragma once
 
+#include <condition_variable>
 #include <cstddef>
 #include <cstdint>
 #include <functional>
+#include <memory>
 #include <mutex>
 #include <string>
 #include <string_view>
+#include <thread>
 #include <utility>
 #include <vector>
 
@@ -70,6 +73,11 @@ public:
                 VideoSampleHandler video_sample_handler = {});
 
     /**
+     * @brief 析构 PeerSession 对象并释放相关资源。
+     */
+    ~PeerSession();
+
+    /**
      * @brief 启动相关流程。
      */
     void Start();
@@ -93,6 +101,12 @@ public:
     void SendVideoFrame(const agent::encoder::EncodedVideoFrame& frame);
 
     /**
+     * @brief 异步排队发送视频帧，仅保留最新帧以降低时延。
+     * @param frame 视频帧对象。
+     */
+    void EnqueueVideoFrame(std::shared_ptr<const agent::encoder::EncodedVideoFrame> frame);
+
+    /**
      * @brief 判断视频Ready是否满足条件。
      * @return 返回是否成功或条件是否满足。
      */
@@ -110,6 +124,46 @@ public:
     void Close();
 
 private:
+    /**
+     * @brief 确保视频发送线程已就绪。
+     */
+    void EnsureVideoSendLoop();
+
+    /**
+     * @brief 停止视频发送线程。
+     */
+    void StopVideoSendLoop();
+
+    /**
+     * @brief 运行视频发送线程循环。
+     */
+    void RunVideoSendLoop();
+
+    /**
+     * @brief 立即发送视频帧。
+     * @param frame 视频帧对象。
+     */
+    void SendVideoFrameNow(const agent::encoder::EncodedVideoFrame& frame);
+
+    /**
+     * @brief 选择用于发送控制消息的数据通道。
+     * @return 返回数据通道标识；无可用通道时返回 -1。
+     */
+    int SelectControlChannelIdForSend() const;
+
+    /**
+     * @brief 记录已知控制数据通道。
+     * @param data_channel_id 数据通道标识。
+     * @param label 数据通道标签。
+     */
+    void RegisterDataChannel(int data_channel_id, std::string_view label);
+
+    /**
+     * @brief 解析数据通道标签。
+     * @param data_channel_id 数据通道标识。
+     * @return 返回可读标签。
+     */
+    std::string ResolveDataChannelLabel(int data_channel_id) const;
 
     /**
      * @brief 确保对等端连接已就绪。
@@ -363,6 +417,8 @@ private:
 
     int control_channel_id_ = -1;
 
+    int control_realtime_channel_id_ = -1;
+
     int video_track_id_ = -1;
 
     bool started_ = false;
@@ -385,6 +441,8 @@ private:
 
     std::string control_channel_label_ = "control";
 
+    std::string control_realtime_channel_label_ = "control_rt";
+
     std::string video_track_mid_ = "video";
 
     int negotiated_video_payload_type_ = 102;
@@ -392,6 +450,20 @@ private:
     std::string negotiated_video_profile_ = "profile-level-id=42e01f;packetization-mode=1;level-asymmetry-allowed=1";
 
     mutable std::recursive_mutex mutex_;
+
+    std::mutex queued_video_frame_mutex_;
+
+    std::condition_variable queued_video_frame_cv_;
+
+    std::shared_ptr<const agent::encoder::EncodedVideoFrame> queued_video_frame_;
+
+    std::thread video_send_thread_;
+
+    bool video_send_stop_requested_ = false;
+
+    bool accepting_video_frames_ = false;
+
+    std::uint64_t dropped_queued_video_frames_ = 0;
 
     std::vector<Json> pending_candidates_;
 

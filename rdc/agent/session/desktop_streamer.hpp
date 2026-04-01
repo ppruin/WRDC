@@ -12,6 +12,8 @@
 #include <thread>
 #include <vector>
 
+#include "../platform/windows/h264_encoder_types.hpp"
+
 namespace rdc {
 
 /**
@@ -31,6 +33,7 @@ struct DesktopStreamerConfig {
     std::uint32_t fps_den = 1;
     std::uint32_t bitrate = 4'000'000;
     std::uint32_t gop_size = 60;
+    platform::windows::H264EncoderBackend encoder_backend = platform::windows::H264EncoderBackend::Auto;
 };
 
 /**

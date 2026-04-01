@@ -119,6 +119,36 @@
       <UniqueIdentifier>{05EFBCD2-D8F3-F67B-8546-22D56A6E189D}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\resuorce">
+      <UniqueIdentifier>{aaeaaddf-a1d5-49ae-9f81-375a79b470ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\resource">
+      <UniqueIdentifier>{dac4042f-e0f1-46c4-876a-363832479054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ui">
+      <UniqueIdentifier>{A5E67A77-0E2B-4D8B-BD72-C6381C3B4A4C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ui\widgets">
+      <UniqueIdentifier>{5C4244CA-2AE8-4EA8-B8A5-4AC691BBBA4E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ui\animations">
+      <UniqueIdentifier>{62040BB9-5EAE-4AC6-A7DC-E773225482BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ui">
+      <UniqueIdentifier>{F68A661A-6A22-4E20-A15F-D0A825FF12E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ui\widgets">
+      <UniqueIdentifier>{C94ED4A4-0068-40EC-B02E-9CE635EA3443}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ui\animations">
+      <UniqueIdentifier>{1AA0D273-8F76-4CDD-90A0-0F9B1468666D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="其他文件\ui">
+      <UniqueIdentifier>{D4FB8C62-0A4F-43E8-9152-F2D47B415268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="其他文件\ui\assets">
+      <UniqueIdentifier>{8A7DB80A-66DA-4762-B0F6-3D98DF81E4A2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="agent\encoder\bgra_to_nv12_converter.cpp">
@@ -131,6 +161,12 @@
       <Filter>源文件\agent\platform\windows</Filter>
     </ClCompile>
     <ClCompile Include="agent\platform\windows\dxgi_desktop_duplicator.cpp">
+      <Filter>源文件\agent\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\platform\windows\h264_video_encoder.cpp">
+      <Filter>源文件\agent\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="agent\platform\windows\mf_h264_encoder.cpp">
       <Filter>源文件\agent\platform\windows</Filter>
     </ClCompile>
     <ClCompile Include="agent\platform\windows\x264_h264_encoder.cpp">
@@ -181,6 +217,36 @@
     <ClCompile Include="server\signaling_gateway\signaling_server.cpp">
       <Filter>源文件\server\signaling_gateway</Filter>
     </ClCompile>
+    <ClCompile Include="..\imgui-1.92.6\backends\imgui_impl_dx12.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui-1.92.6\backends\imgui_impl_win32.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui-1.92.6\imgui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui-1.92.6\imgui_draw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui-1.92.6\imgui_tables.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\imgui-1.92.6\imgui_widgets.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\animations\ui_animations.cpp">
+      <Filter>源文件\ui\animations</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\gui_main.cpp">
+      <Filter>源文件\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\widgets\ui_widgets.cpp">
+      <Filter>源文件\ui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="read_resource.cpp">
+      <Filter>源文件\resuorce</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agent\capture\desktop_capturer.hpp">
@@ -205,6 +271,12 @@
       <Filter>头文件\agent\platform\windows</Filter>
     </ClInclude>
     <ClInclude Include="agent\platform\windows\dxgi_desktop_duplicator.hpp">
+      <Filter>头文件\agent\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\platform\windows\h264_encoder_types.hpp">
+      <Filter>头文件\agent\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="agent\platform\windows\h264_video_encoder.hpp">
       <Filter>头文件\agent\platform\windows</Filter>
     </ClInclude>
     <ClInclude Include="agent\platform\windows\mf_h264_encoder.hpp">
@@ -282,13 +354,51 @@
     <ClInclude Include="signal_socket.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\imgui-1.92.6\backends\imgui_impl_dx12.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui-1.92.6\backends\imgui_impl_win32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui-1.92.6\imgui.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\imgui-1.92.6\imconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\animations\ui_animations.hpp">
+      <Filter>头文件\ui\animations</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\gui_main.hpp">
+      <Filter>头文件\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\widgets\ui_widgets.hpp">
+      <Filter>头文件\ui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="read_resource.h">
+      <Filter>头文件\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="agent\platform\windows\mf_h264_encoder.cpp">
-      <Filter>源文件\agent\platform\windows</Filter>
-    </None>
     <None Include="signal_socket.cpp">
       <Filter>源文件</Filter>
     </None>
+    <None Include="ui\assets\home.bmp">
+      <Filter>其他文件\ui\assets</Filter>
+    </None>
+    <None Include="ui\assets\shezhi.bmp">
+      <Filter>其他文件\ui\assets</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="rdc.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\fonts\LolitaFont-2.ttf" />
   </ItemGroup>
 </Project>

@@ -9,6 +9,8 @@
 
 #include <array>
 
+#include <condition_variable>
+
 #include <cctype>
 
 #include <cstdio>
@@ -17,6 +19,8 @@
 
 #include <ctime>
 
+#include <memory>
+
 #include <optional>
 
 #include <stdexcept>
@@ -24,6 +28,8 @@
 #include <string>
 
 #include <string_view>
+
+#include <thread>
 
 #include <utility>
 
@@ -38,6 +44,8 @@ namespace {
 constexpr char kVideoMid[] = "video";
 
 constexpr char kControlChannelLabel[] = "control";
+
+constexpr char kRealtimeControlChannelLabel[] = "control_rt";
 
 constexpr char kDefaultTrackName[] = "desktop";
 
@@ -796,6 +804,10 @@ PeerSession::PeerSession(PeerRole role,
 
 }
 
+PeerSession::~PeerSession() {
+    Close();
+}
+
 /**
  * @brief 启动相关流程。
  */
@@ -819,6 +831,10 @@ void PeerSession::Start() {
 
         return;
 
+    }
+
+    if (role_ == PeerRole::Host) {
+        EnsureVideoSendLoop();
     }
 
     Log("开始创建会话链路");
@@ -857,11 +873,7 @@ void PeerSession::HandleSignal(const Json& payload) {
  */
 void PeerSession::SendControl(const Json& payload) {
 
-    const auto channel = WithLock([this] {
-
-        return control_channel_id_;
-
-    });
+    const auto channel = SelectControlChannelIdForSend();
 
     if (channel < 0 || !rtcIsOpen(channel)) {
 
@@ -879,82 +891,236 @@ void PeerSession::SendControl(const Json& payload) {
 
 }
 
+int PeerSession::SelectControlChannelIdForSend() const {
+
+    return WithLock([this] {
+
+        if (control_channel_id_ >= 0 && rtcIsOpen(control_channel_id_)) {
+
+            return control_channel_id_;
+
+        }
+
+        if (control_realtime_channel_id_ >= 0 && rtcIsOpen(control_realtime_channel_id_)) {
+
+            return control_realtime_channel_id_;
+
+        }
+
+        return -1;
+
+    });
+
+}
+
+void PeerSession::RegisterDataChannel(const int data_channel_id, const std::string_view label) {
+
+    WithLock([this, data_channel_id, label] {
+
+        if (label == kControlChannelLabel) {
+
+            control_channel_id_ = data_channel_id;
+
+            control_channel_label_ = std::string(label);
+
+        } else if (label == kRealtimeControlChannelLabel) {
+
+            control_realtime_channel_id_ = data_channel_id;
+
+            control_realtime_channel_label_ = std::string(label);
+
+        }
+
+    });
+
+}
+
+std::string PeerSession::ResolveDataChannelLabel(const int data_channel_id) const {
+
+    return WithLock([this, data_channel_id] {
+
+        if (data_channel_id == control_channel_id_) {
+
+            return control_channel_label_;
+
+        }
+
+        if (data_channel_id == control_realtime_channel_id_) {
+
+            return control_realtime_channel_label_;
+
+        }
+
+        return GetDataChannelLabel(data_channel_id);
+
+    });
+
+}
+
 /**
  * @brief 发送视频帧。
  * @param frame 视频帧对象。
  */
 void PeerSession::SendVideoFrame(const agent::encoder::EncodedVideoFrame& frame) {
+    EnqueueVideoFrame(std::make_shared<agent::encoder::EncodedVideoFrame>(frame));
+}
 
-    if (frame.bytes.empty()) {
-
+void PeerSession::EnqueueVideoFrame(std::shared_ptr<const agent::encoder::EncodedVideoFrame> frame) {
+    if (role_ != PeerRole::Host || frame == nullptr || frame->bytes.empty()) {
         return;
+    }
 
+    bool dropped_previous_frame = false;
+    std::uint64_t dropped_frame_count = 0;
+
+    {
+        std::scoped_lock lock(queued_video_frame_mutex_);
+
+        if (!accepting_video_frames_ || video_send_stop_requested_) {
+            return;
+        }
+
+        if (queued_video_frame_ != nullptr &&
+            queued_video_frame_->is_key_frame &&
+            !frame->is_key_frame) {
+            return;
+        }
+
+        dropped_previous_frame = queued_video_frame_ != nullptr;
+        if (dropped_previous_frame) {
+            dropped_frame_count = ++dropped_queued_video_frames_;
+        }
+
+        queued_video_frame_ = std::move(frame);
+    }
+
+    queued_video_frame_cv_.notify_one();
+
+    if (dropped_previous_frame &&
+        (dropped_frame_count <= 5 || dropped_frame_count % 60 == 0)) {
+        Log("视频发送队列已丢弃旧帧以保持低时延, 累计丢弃=" +
+            std::to_string(dropped_frame_count));
+    }
+}
+
+void PeerSession::EnsureVideoSendLoop() {
+    {
+        std::scoped_lock lock(queued_video_frame_mutex_);
+
+        if (video_send_thread_.joinable()) {
+            return;
+        }
+
+        accepting_video_frames_ = true;
+        video_send_stop_requested_ = false;
+        dropped_queued_video_frames_ = 0;
+        queued_video_frame_.reset();
+    }
+
+    video_send_thread_ = std::thread([this] {
+        RunVideoSendLoop();
+    });
+}
+
+void PeerSession::StopVideoSendLoop() {
+    std::thread send_thread;
+
+    {
+        std::scoped_lock lock(queued_video_frame_mutex_);
+
+        accepting_video_frames_ = false;
+        video_send_stop_requested_ = true;
+        queued_video_frame_.reset();
+
+        if (video_send_thread_.joinable()) {
+            send_thread = std::move(video_send_thread_);
+        } else {
+            dropped_queued_video_frames_ = 0;
+        }
+    }
+
+    queued_video_frame_cv_.notify_all();
+
+    if (send_thread.joinable()) {
+        send_thread.join();
+    }
+
+    {
+        std::scoped_lock lock(queued_video_frame_mutex_);
+        dropped_queued_video_frames_ = 0;
+        queued_video_frame_.reset();
+    }
+}
+
+void PeerSession::RunVideoSendLoop() {
+    while (true) {
+        std::shared_ptr<const agent::encoder::EncodedVideoFrame> frame;
+
+        {
+            std::unique_lock lock(queued_video_frame_mutex_);
+            queued_video_frame_cv_.wait(lock, [this] {
+                return video_send_stop_requested_ || queued_video_frame_ != nullptr;
+            });
+
+            if (video_send_stop_requested_) {
+                return;
+            }
+
+            frame = std::move(queued_video_frame_);
+            queued_video_frame_.reset();
+        }
+
+        if (frame != nullptr) {
+            SendVideoFrameNow(*frame);
+        }
+    }
+}
+
+void PeerSession::SendVideoFrameNow(const agent::encoder::EncodedVideoFrame& frame) {
+    if (frame.bytes.empty()) {
+        return;
     }
 
     int video_track_id = -1;
-
     std::uint32_t current_timestamp = 0;
-
     std::uint64_t sent_frame_index = 0;
-
     bool should_log = false;
-
     std::string track_mid;
-
     std::string negotiated_video_profile;
 
     {
-
         std::scoped_lock lock(mutex_);
 
         video_track_id = video_track_id_;
 
         const bool can_send_video = role_ == PeerRole::Host
-
             ? (video_track_id >= 0 && rtcIsOpen(video_track_id))
-
             : video_track_open_;
 
         if (video_track_id < 0 || !can_send_video) {
-
             return;
-
         }
 
         current_timestamp = video_rtp_timestamp_;
-
         video_rtp_timestamp_ += ComputeRtpTimestampDelta(frame.sample_duration_hns);
-
         sent_frame_index = ++sent_video_frames_;
-
         should_log = sent_frame_index <= 5 || sent_frame_index % 60 == 0;
 
         if (should_log) {
-
             track_mid = video_track_mid_;
-
             negotiated_video_profile = negotiated_video_profile_;
-
         }
-
     }
 
     if (rtcSetTrackRtpTimestamp(video_track_id, current_timestamp) != RTC_ERR_SUCCESS) {
-
         Log("设置视频轨 RTP 时间戳失败");
-
         return;
-
     }
 
     const agent::encoder::EncodedVideoFrame* frame_to_send = &frame;
-
     agent::encoder::EncodedVideoFrame rewritten_frame;
-
     std::optional<std::string> original_profile_level_id;
-
     std::optional<std::string> sent_profile_level_id;
-
     bool rewrote_keyframe_sps = false;
 
     if (role_ == PeerRole::Host && frame.is_key_frame) {
@@ -981,63 +1147,43 @@ void PeerSession::SendVideoFrame(const agent::encoder::EncodedVideoFrame& frame)
     }
 
     if (rtcSendMessage(video_track_id,
-
                        reinterpret_cast<const char*>(frame_to_send->bytes.data()),
-
                        static_cast<int>(frame_to_send->bytes.size())) != RTC_ERR_SUCCESS) {
-
         Log("发送已编码的 H.264 数据失败");
-
         return;
-
     }
 
     if (should_log) {
-
         Log("已在 " + track_mid +
-
             " 视频轨上发送编码桌面帧, 帧序号=" + std::to_string(sent_frame_index) +
-
             ", 字节数=" + std::to_string(frame_to_send->bytes.size()) +
-
             ", 关键帧=" + (frame.is_key_frame ? std::string("是") : std::string("否")));
-
     }
 
     if (role_ == PeerRole::Host && frame.is_key_frame) {
-
         bool should_log_profile = false;
 
         {
-
             std::scoped_lock lock(mutex_);
 
             if (!logged_first_keyframe_profile_) {
-
                 logged_first_keyframe_profile_ = true;
-
                 should_log_profile = true;
-
             }
-
         }
 
         if (should_log_profile) {
-
-            if (const auto profile_level_id = sent_profile_level_id.has_value() ? sent_profile_level_id : TryExtractSpsProfileLevelId(frame_to_send->bytes); profile_level_id.has_value()) {
-
+            if (const auto profile_level_id =
+                    sent_profile_level_id.has_value()
+                        ? sent_profile_level_id
+                        : TryExtractSpsProfileLevelId(frame_to_send->bytes);
+                profile_level_id.has_value()) {
                 Log("首个关键帧 SPS 信息: profile-level-id=" + *profile_level_id);
-
             } else {
-
                 Log("首个关键帧未能解析出 SPS profile-level-id");
-
             }
-
         }
-
     }
-
 }
 
 /**
@@ -1082,12 +1228,15 @@ bool PeerSession::ConsumePendingKeyframeRequest() {
  * @brief 关闭相关流程。
  */
 void PeerSession::Close() {
+    StopVideoSendLoop();
 
     struct Handles {
 
         int peer_connection_id = -1;
 
         int control_channel_id = -1;
+
+        int control_realtime_channel_id = -1;
 
         int video_track_id = -1;
 
@@ -1101,11 +1250,15 @@ void PeerSession::Close() {
 
         result.control_channel_id = control_channel_id_;
 
+        result.control_realtime_channel_id = control_realtime_channel_id_;
+
         result.video_track_id = video_track_id_;
 
         peer_connection_id_ = -1;
 
         control_channel_id_ = -1;
+
+        control_realtime_channel_id_ = -1;
 
         video_track_id_ = -1;
 
@@ -1154,6 +1307,8 @@ void PeerSession::Close() {
     };
 
     clear_callbacks(handles.control_channel_id);
+
+    clear_callbacks(handles.control_realtime_channel_id);
 
     clear_callbacks(handles.video_track_id);
 
@@ -1248,13 +1403,7 @@ void PeerSession::EnsurePeerConnection() {
 
         }
 
-        WithLock([this, dc] {
-
-            control_channel_id_ = dc;
-
-            control_channel_label_ = kControlChannelLabel;
-
-        });
+        RegisterDataChannel(dc, kControlChannelLabel);
 
         ConfigureDataChannel(dc);
 
@@ -1887,15 +2036,7 @@ void RTC_API PeerSession::HandleDataChannel(int /*pc*/, int dc, void* ptr) {
 
     const auto label = GetDataChannelLabel(dc);
 
-    {
-
-        std::scoped_lock lock(self->mutex_);
-
-        self->control_channel_id_ = dc;
-
-        self->control_channel_label_ = label;
-
-    }
+    self->RegisterDataChannel(dc, label);
 
     self->ConfigureDataChannel(dc);
 
@@ -2002,11 +2143,7 @@ void RTC_API PeerSession::HandleChannelOpen(int id, void* ptr) {
 
     }
 
-    const auto label = self->WithLock([self, id] {
-
-        return id == self->control_channel_id_ ? self->control_channel_label_ : std::string("未知数据通道");
-
-    });
+    const auto label = self->ResolveDataChannelLabel(id);
 
     self->Log("数据通道已打开 -> " + label);
 
@@ -2041,11 +2178,7 @@ void RTC_API PeerSession::HandleChannelClosed(int id, void* ptr) {
 
     }
 
-    const auto label = self->WithLock([self, id] {
-
-        return id == self->control_channel_id_ ? self->control_channel_label_ : GetDataChannelLabel(id);
-
-    });
+    const auto label = self->ResolveDataChannelLabel(id);
 
     self->Log("数据通道已关闭 -> " + label);
 
@@ -2067,11 +2200,7 @@ void RTC_API PeerSession::HandleChannelError(int id, const char* error, void* pt
 
     }
 
-    const auto label = self->WithLock([self, id] {
-
-        return id == self->control_channel_id_ ? self->control_channel_label_ : GetDataChannelLabel(id);
-
-    });
+    const auto label = self->ResolveDataChannelLabel(id);
 
     self->Log("数据通道错误，通道=" + label + ": " + (error != nullptr ? std::string(error) : std::string("未知")));
 
@@ -2094,11 +2223,7 @@ void RTC_API PeerSession::HandleChannelMessage(int id, const char* message, int 
 
     }
 
-    const auto label = self->WithLock([self, id] {
-
-        return id == self->control_channel_id_ ? self->control_channel_label_ : std::string("未知数据通道");
-
-    });
+    const auto label = self->ResolveDataChannelLabel(id);
 
     self->HandleDataChannelMessage(label, message, static_cast<std::size_t>(size));
 

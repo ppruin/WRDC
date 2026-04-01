@@ -53,8 +53,10 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings"></ImportGroup>
-  <ImportGroup Label="Shared"></ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
@@ -80,13 +82,13 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include;$(ProjectDir)..\imgui-1.92.6;$(ProjectDir)..\imgui-1.92.6\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;d3d12.lib;dxgi.lib;propsys.lib;mfplat.lib;mf.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,13 +102,13 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include;$(ProjectDir)..\imgui-1.92.6;$(ProjectDir)..\imgui-1.92.6\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;d3d12.lib;dxgi.lib;propsys.lib;mfplat.lib;mf.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -118,13 +120,13 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include;$(ProjectDir)..\imgui-1.92.6;$(ProjectDir)..\imgui-1.92.6\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;d3d12.lib;dxgi.lib;propsys.lib;mfplat.lib;mf.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -138,13 +140,13 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\RuanJian\mimalloc\include;$(ProjectDir)..\imgui-1.92.6;$(ProjectDir)..\imgui-1.92.6\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 /FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>winhttp.lib;d3d11.lib;dxgi.lib;propsys.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>winhttp.lib;d3d11.lib;d3d12.lib;dxgi.lib;propsys.lib;mfplat.lib;mf.lib;mfuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -156,6 +158,8 @@
     <ClCompile Include="agent\encoder\bgra_to_nv12_converter.cpp" />
     <ClCompile Include="agent\platform\windows\d3d11_desktop_frame_reader.cpp" />
     <ClCompile Include="agent\platform\windows\dxgi_desktop_duplicator.cpp" />
+    <ClCompile Include="agent\platform\windows\h264_video_encoder.cpp" />
+    <ClCompile Include="agent\platform\windows\mf_h264_encoder.cpp" />
     <ClCompile Include="agent\platform\windows\x264_h264_encoder.cpp" />
     <ClCompile Include="agent\main.cpp">
       <ObjectFileName>$(IntDir)agent_main.obj</ObjectFileName>
@@ -170,15 +174,25 @@
     <ClCompile Include="controller\rtc\controller_client.cpp" />
     <ClCompile Include="entry.cpp" />
     <ClCompile Include="agent\session\host_client.cpp" />
+    <ClCompile Include="..\imgui-1.92.6\backends\imgui_impl_dx12.cpp" />
+    <ClCompile Include="..\imgui-1.92.6\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\imgui-1.92.6\imgui.cpp" />
+    <ClCompile Include="..\imgui-1.92.6\imgui_draw.cpp" />
+    <ClCompile Include="..\imgui-1.92.6\imgui_tables.cpp" />
+    <ClCompile Include="..\imgui-1.92.6\imgui_widgets.cpp" />
     <ClCompile Include="mimalloc_override.cpp" />
     <ClCompile Include="agent\rtc\peer_session.cpp" />
     <ClCompile Include="protocol\common\console_logger.cpp" />
     <ClCompile Include="protocol\common\win_websocket_client.cpp" />
+    <ClCompile Include="read_resource.cpp" />
     <ClCompile Include="server\audit\server_logger.cpp" />
     <ClCompile Include="server\main.cpp">
       <ObjectFileName>$(IntDir)server_main.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="server\signaling_gateway\signaling_server.cpp" />
+    <ClCompile Include="ui\animations\ui_animations.cpp" />
+    <ClCompile Include="ui\gui_main.cpp" />
+    <ClCompile Include="ui\widgets\ui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="agent\encoder\bgra_to_nv12_converter.hpp" />
@@ -189,6 +203,8 @@
     <ClInclude Include="agent\capture\desktop_capturer.hpp" />
     <ClInclude Include="agent\capture\desktop_frame.hpp" />
     <ClInclude Include="agent\platform\windows\dxgi_desktop_duplicator.hpp" />
+    <ClInclude Include="agent\platform\windows\h264_encoder_types.hpp" />
+    <ClInclude Include="agent\platform\windows\h264_video_encoder.hpp" />
     <ClInclude Include="agent\platform\windows\x264_h264_encoder.hpp" />
     <ClInclude Include="controller\renderer\decoded_video_frame.hpp" />
     <ClInclude Include="controller\ui\browser_controller_assets.hpp" />
@@ -199,6 +215,10 @@
     <ClInclude Include="controller\rtc\h264_rtp_depacketizer.hpp" />
     <ClInclude Include="agent\session\host_client.hpp" />
     <ClInclude Include="agent\rtc\peer_session.hpp" />
+    <ClInclude Include="..\imgui-1.92.6\backends\imgui_impl_dx12.h" />
+    <ClInclude Include="..\imgui-1.92.6\backends\imgui_impl_win32.h" />
+    <ClInclude Include="..\imgui-1.92.6\imgui.h" />
+    <ClInclude Include="..\imgui-1.92.6\imconfig.h" />
     <ClInclude Include="protocol\common\buffer_utils.hpp" />
     <ClInclude Include="protocol\common\json_utils.hpp" />
     <ClInclude Include="protocol\common\rtc_handle_utils.hpp" />
@@ -206,6 +226,8 @@
     <ClInclude Include="protocol\common\video_convert_utils.hpp" />
     <ClInclude Include="protocol.hpp" />
     <ClInclude Include="protocol\common\win_websocket_client.hpp" />
+    <ClInclude Include="read_resource.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="server\audit\server_logger.hpp" />
     <ClInclude Include="server\transport\server_config.hpp" />
     <ClInclude Include="server\signaling_gateway\signaling_server.hpp" />
@@ -214,11 +236,22 @@
     <ClInclude Include="protocol\control\control_protocol.hpp" />
     <ClInclude Include="protocol\signaling\signaling_protocol.hpp" />
     <ClInclude Include="signal_socket.hpp" />
+    <ClInclude Include="ui\animations\ui_animations.hpp" />
+    <ClInclude Include="ui\gui_main.hpp" />
+    <ClInclude Include="ui\widgets\ui_widgets.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="agent\platform\windows\mf_h264_encoder.cpp" />
     <None Include="signal_socket.cpp" />
+    <None Include="ui\assets\home.bmp" />
+    <None Include="ui\assets\shezhi.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="rdc.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\fonts\LolitaFont-2.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets"></ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

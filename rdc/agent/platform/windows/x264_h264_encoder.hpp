@@ -11,6 +11,7 @@
 
 #include <x264.h>
 
+#include "h264_encoder_types.hpp"
 #include "../../encoder/encoded_video_frame.hpp"
 #include "../../encoder/nv12_video_frame.hpp"
 
@@ -24,18 +25,6 @@ struct x264_param_t;
 struct x264_t;
 
 namespace rdc::agent::platform::windows {
-
-/**
- * @brief 描述 H264EncoderConfig 的配置项。
- */
-struct H264EncoderConfig {
-    std::uint32_t width = 0;
-    std::uint32_t height = 0;
-    std::uint32_t fps_num = 30;
-    std::uint32_t fps_den = 1;
-    std::uint32_t bitrate = 4'000'000;
-    std::uint32_t gop_size = 60;
-};
 
 /**
  * @brief 封装 X264H264Encoder 相关的编码流程。

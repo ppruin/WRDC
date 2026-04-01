@@ -18,6 +18,11 @@ namespace rdc::controller::renderer {
  * @brief 封装 OpenH264VideoDecoder 相关的解码流程。
  */
 class OpenH264VideoDecoder {
+
+    ISVCDecoder* decoder_ = nullptr;
+    std::mutex mutex_;
+    DecodedVideoFrame working_frame_;
+
 public:
     /**
      * @brief 构造 OpenH264VideoDecoder 对象。
@@ -64,8 +69,6 @@ private:
      * @return 返回是否成功或条件是否满足。
      */
     bool DecodeLocked(const std::uint8_t* bytes, std::size_t size, DecodedVideoFrame& output_frame);
-    ISVCDecoder* decoder_ = nullptr;
-    std::mutex mutex_;
-    DecodedVideoFrame working_frame_;
+
 };
 }  // namespace rdc::controller::renderer

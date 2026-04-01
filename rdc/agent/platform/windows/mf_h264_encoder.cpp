@@ -194,6 +194,7 @@ void MfH264Encoder::Initialize() {
     ComPtr<IMFAttributes> attributes;
     if (SUCCEEDED(transform_->GetAttributes(&attributes)) && attributes != nullptr) {
         attributes->SetUINT32(MF_TRANSFORM_ASYNC_UNLOCK, TRUE);
+        attributes->SetUINT32(MF_LOW_LATENCY, TRUE);
     }
     ConfigureCodecApi();
     SetMediaTypes();
@@ -204,9 +205,9 @@ void MfH264Encoder::Initialize() {
  * @brief 配置CodecApi。
  */
 void MfH264Encoder::ConfigureCodecApi() {
-    ComPtr<ICodecAPI> codec_api;
-    const HRESULT query_hr = transform_.As(&codec_api);
-    if (FAILED(query_hr) || codec_api == nullptr) {
+    codec_api_.Reset();
+    const HRESULT query_hr = transform_.As(&codec_api_);
+    if (FAILED(query_hr) || codec_api_ == nullptr) {
         return;
     }
 
@@ -215,11 +216,24 @@ void MfH264Encoder::ConfigureCodecApi() {
 
     value.vt = VT_UI4;
     value.ulVal = eAVEncCommonRateControlMode_CBR;
-    codec_api->SetValue(&CODECAPI_AVEncCommonRateControlMode, &value);
+    codec_api_->SetValue(&CODECAPI_AVEncCommonRateControlMode, &value);
 
     value.ulVal = config_.gop_size;
-    codec_api->SetValue(&CODECAPI_AVEncMPVGOPSize, &value);
+    codec_api_->SetValue(&CODECAPI_AVEncMPVGOPSize, &value);
 
+    VariantClear(&value);
+}
+
+void MfH264Encoder::RequestKeyframe() {
+    if (codec_api_ == nullptr) {
+        return;
+    }
+
+    VARIANT value;
+    VariantInit(&value);
+    value.vt = VT_UI4;
+    value.ulVal = 1;
+    codec_api_->SetValue(&CODECAPI_AVEncVideoForceKeyFrame, &value);
     VariantClear(&value);
 }
 
@@ -284,11 +298,26 @@ ComPtr<IMFTransform> MfH264Encoder::CreateEncoderTransform() const {
     IMFActivate** activates = nullptr;
     UINT32 activate_count = 0;
     HRESULT enum_hr = MFTEnumEx(MFT_CATEGORY_VIDEO_ENCODER,
-                                MFT_ENUM_FLAG_SYNCMFT | MFT_ENUM_FLAG_LOCALMFT | MFT_ENUM_FLAG_SORTANDFILTER,
+                                MFT_ENUM_FLAG_HARDWARE | MFT_ENUM_FLAG_SORTANDFILTER,
                                 &input_type_info,
                                 &output_type_info,
                                 &activates,
                                 &activate_count);
+
+    if (FAILED(enum_hr) || activate_count == 0 || activates == nullptr) {
+        if (activates != nullptr) {
+            CoTaskMemFree(activates);
+            activates = nullptr;
+        }
+
+        activate_count = 0;
+        enum_hr = MFTEnumEx(MFT_CATEGORY_VIDEO_ENCODER,
+                            MFT_ENUM_FLAG_SYNCMFT | MFT_ENUM_FLAG_LOCALMFT | MFT_ENUM_FLAG_SORTANDFILTER,
+                            &input_type_info,
+                            &output_type_info,
+                            &activates,
+                            &activate_count);
+    }
 
     if (FAILED(enum_hr) || activate_count == 0 || activates == nullptr) {
         if (activates != nullptr) {

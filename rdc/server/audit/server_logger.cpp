@@ -12,6 +12,8 @@
 #include <sstream>
 #include <system_error>
 
+#include "../../protocol/common/console_logger.hpp"
+
 namespace rdc::server::audit {
 
 /**
@@ -20,9 +22,11 @@ namespace rdc::server::audit {
  */
 ServerLogger::ServerLogger(const ServerConfig& config)
     : config_(config) {
+#ifdef _DEBUG
     if (config_.save_logs) {
         InitializeFileSink();
     }
+#endif
 }
 
 /**
@@ -73,6 +77,7 @@ bool ServerLogger::IsVerbose() const {
  * @param message 待处理的消息对象。
  */
 void ServerLogger::Write(const ServerLogLevel level, const std::string_view message) const {
+#ifdef _DEBUG
     const std::string line = "[" + BuildTimestamp() + "][" + ToChineseLevel(level) + "] " + std::string(message);
 
     std::scoped_lock lock(mutex_);
@@ -83,6 +88,11 @@ void ServerLogger::Write(const ServerLogLevel level, const std::string_view mess
         file_stream_ << line << '\n';
         file_stream_.flush();
     }
+#else
+    if (level == ServerLogLevel::Error) {
+        protocol::common::WriteLogLine(protocol::common::LogSeverity::Error, message);
+    }
+#endif
 }
 
 /**

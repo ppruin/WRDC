@@ -1,0 +1,8 @@
+#include "resource.h"
+#include "winres.h"
+
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+
+IDR_FONT1 RCDATA "C:\\RuanJian\\fonts\\LolitaFont-2.ttf"
+IDB_SETTINGS_ICON BITMAP "ui\\assets\\shezhi.bmp"
+IDB_HOME_ICON BITMAP "ui\\assets\\home.bmp"

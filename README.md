@@ -1,3 +1,6 @@
+#项目执行流程示意 
+
+```mermaid
 flowchart TD
     A["rdc.exe\nentry.cpp"] -->|无参数 / gui| G["GUI 模式\nui/gui_main.cpp"]
     A -->|server| S["服务端入口\nserver/main.cpp"]
@@ -38,3 +41,4 @@ flowchart TD
     B4 --> B5["control / control_rt 数据通道"]
     B5 --> H7
     H6 --> B4
+```

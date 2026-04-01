@@ -1781,7 +1781,11 @@ void GuiApplication::ReleaseBitmapIcon(BitmapIcon& icon) {
     }
 
     /**
+<<<<<<< HEAD
      * @brief 按当前构建配置启动一个受管子进程。
+=======
+     * @brief 以隐藏窗口方式启动一个受管子进程。
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
      * @param command_line 子进程完整命令行。
      * @param process_name 用于状态提示的进程名称。
      * @param out_process 输出受管子进程句柄。
@@ -1793,6 +1797,7 @@ void GuiApplication::ReleaseBitmapIcon(BitmapIcon& icon) {
         STARTUPINFOW startup_info{};
         startup_info.cb = sizeof(startup_info);
         startup_info.dwFlags = STARTF_USESHOWWINDOW;
+<<<<<<< HEAD
 
 #ifdef _DEBUG
         startup_info.wShowWindow = SW_SHOWDEFAULT;
@@ -1807,6 +1812,13 @@ void GuiApplication::ReleaseBitmapIcon(BitmapIcon& icon) {
 #else
         constexpr DWORD kCreationFlags = CREATE_NO_WINDOW | CREATE_SUSPENDED;
 #endif
+=======
+        startup_info.wShowWindow = SW_HIDE;
+
+        PROCESS_INFORMATION process_information{};
+        std::wstring mutable_command_line = command_line;
+        constexpr DWORD kCreationFlags = CREATE_NO_WINDOW | CREATE_SUSPENDED;
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
         const BOOL created = ::CreateProcessW(nullptr,
                                               mutable_command_line.data(),
                                               nullptr,

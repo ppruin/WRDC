@@ -1,0 +1,41 @@
+mimalloc 版本: 225
+[2026-03-27 22:25:48][信息] 信令服务正在启动
+[2026-03-27 22:25:48][信息] 监听地址: 0.0.0.0:5000
+[2026-03-27 22:25:48][信息] 日志级别: 详细
+[2026-03-27 22:25:48][信息] 信令服务已启动
+[2026-03-27 22:25:48][信息] 新连接已建立: connectionId=conn_1
+[2026-03-27 22:25:48][详细] 收到消息: connectionId=conn_1, role=未注册, type=register_device
+[2026-03-27 22:25:48][信息] 设备已注册: deviceId=host-1, connectionId=conn_1
+[2026-03-27 22:25:49][信息] 新连接已建立: connectionId=conn_2
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=未注册, type=register_controller
+[2026-03-27 22:25:49][信息] 控制端已注册: userId=user-1, connectionId=conn_2
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=create_session
+[2026-03-27 22:25:49][信息] 已创建会话: sessionId=sess_1, userId=user-1, targetDeviceId=host-1
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=accept_session
+[2026-03-27 22:25:49][信息] 会话已接受: sessionId=sess_1, hostDeviceId=host-1
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][信息] 会话进入活动状态: sessionId=sess_1
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_1, role=host, type=signal
+[2026-03-27 22:25:49][详细] 收到消息: connectionId=conn_2, role=controller, type=signal
+[2026-03-27 22:25:52][详细] 收到消息: connectionId=conn_2, role=controller, type=close_session
+[2026-03-27 22:25:52][信息] 会话已关闭: sessionId=sess_1, reason=ping_completed
+[2026-03-27 22:25:52][信息] 连接已关闭: connectionId=conn_2, role=controller

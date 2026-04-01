@@ -1,0 +1,32 @@
+mimalloc 版本: 225
+host connecting to ws://127.0.0.1:5000/signal as device host-1
+host signaling <- {"connectionId":"conn_5","message":"register as host or controller to begin","type":"hello"}
+host signaling <- {"connectionId":"conn_5","deviceId":"host-1","role":"host","type":"registered"}
+host accepting session sess_3
+[peer:host][sess_3] starting peer session
+[peer:host][sess_3] creating peer connection
+[peer:host][sess_3] configured H.264 video track on mid video
+host ignoring signaling payload <- {"hostDeviceId":"host-1","sessionId":"sess_3","state":"signaling","type":"session_accepted"}
+[peer:host][sess_3] peer connection state -> connecting
+2026-03-27 22:57:13.462 WARN  [79936] [rtc::impl::DtlsTransport::DtlsTransport@810] AES-GCM for SRTP is not supported, falling back to default profile
+[peer:host][sess_3] track open -> video
+[peer:host][sess_3] peer connection state -> connected
+[peer:host][sess_3] received PLI on video, encoder keyframe forcing is not wired yet
+[peer:host][sess_3] received track feedback on video, packet=1, bytes=12
+[peer:host][sess_3] accepted incoming data channel: control
+[peer:host][sess_3] data channel open -> control
+host data <- [control] {"seq":1,"ts":1774623434,"type":"ping"}
+desktop streamer captured first desktop frame: 2560x1440, dirtyRects=1, moveRects=0
+[peer:host][sess_3] received track feedback on video, packet=2, bytes=32
+[peer:host][sess_3] sent encoded desktop frame on video, frame=1, bytes=117849, keyFrame=true
+[peer:host][sess_3] sent encoded desktop frame on video, frame=2, bytes=17315, keyFrame=false
+[peer:host][sess_3] sent encoded desktop frame on video, frame=3, bytes=3942, keyFrame=false
+[peer:host][sess_3] sent encoded desktop frame on video, frame=4, bytes=11065, keyFrame=false
+[peer:host][sess_3] sent encoded desktop frame on video, frame=5, bytes=767, keyFrame=false
+[peer:host][sess_3] received track feedback on video, packet=3, bytes=32
+[peer:host][sess_3] sent encoded desktop frame on video, frame=60, bytes=13026, keyFrame=false
+[peer:host][sess_3] received track feedback on video, packet=4, bytes=32
+[peer:host][sess_3] data channel closed -> control
+[peer:host][sess_3] peer connection state -> disconnected
+[peer:host][sess_3] peer connection state -> closed
+[peer:host][sess_3] track closed -> video

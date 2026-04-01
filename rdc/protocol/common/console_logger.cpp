@@ -15,7 +15,10 @@
 #include <string>
 #include <string_view>
 #include <system_error>
+<<<<<<< HEAD
 #include <vector>
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
 #include <rtc/global.hpp>
 
@@ -77,6 +80,7 @@ bool ShouldSuppressRtcWarning(const rtc::LogLevel level, const std::string_view 
 void WriteLine(std::ostream& stream, const std::string_view line) {
     std::scoped_lock lock(GetConsoleMutex());
     stream << line << '\n';
+<<<<<<< HEAD
     stream.flush();
 
 #if defined(_WIN32) && defined(_DEBUG)
@@ -100,6 +104,8 @@ void WriteLine(std::ostream& stream, const std::string_view line) {
         }
     }
 #endif
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 }
 
 /**

@@ -1,0 +1,19 @@
+mimalloc 版本: 225
+controller connecting to ws://127.0.0.1:5000/signal as user user-1, target device host-1
+controller signaling <- {"connectionId":"conn_2","message":"register as host or controller to begin","type":"hello"}
+controller registered, creating session
+controller session created: sess_1
+[peer:controller][sess_1] starting peer session
+[peer:controller][sess_1] creating peer connection
+[peer:controller][sess_1] configured H.264 video track on mid video
+2026-03-27 22:48:25.368 WARN  [77844] [rtc::impl::IceTransport::LogCallback@390] juice: Local description already has the maximum number of host candidates
+[peer:controller][sess_1] created control data channel
+[peer:controller][sess_1] peer connection state -> connecting
+2026-03-27 22:48:25.369 WARN  [77844] [rtc::PeerConnection::setLocalDescription@133] Unexpected local description in signaling state have-local-offer, ignoring
+[peer:controller][sess_1] requested local description
+2026-03-27 22:48:25.373 WARN  [32208] [rtc::impl::DtlsTransport::DtlsTransport@810] AES-GCM for SRTP is not supported, falling back to default profile
+[peer:controller][sess_1] track open -> video
+[peer:controller][sess_1] peer connection state -> connected
+[peer:controller][sess_1] data channel open -> control
+controller data <- [control] {"echoSeq":1,"type":"pong"}
+controller delaying close by 2000ms

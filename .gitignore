@@ -6,6 +6,7 @@
 /vcpkg_installed/x64-windows
 /x64
 /LICENSE.txt
+<<<<<<< HEAD
 /imgui-1.92.6
 /resouce
 /rdc/rdc
@@ -17,3 +18,5 @@
 /Debug
 /Release
 
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1

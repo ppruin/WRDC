@@ -281,11 +281,19 @@ constexpr std::string_view kBrowserControllerHtml = R"RDC_HTML(<!doctype html>
           <div class="field-grid">
             <div class="field">
               <label for="userId">控制端用户 ID</label>
+<<<<<<< HEAD
               <input id="userId" autocomplete="off">
             </div>
             <div class="field">
               <label for="targetDeviceId">目标主机设备 ID</label>
               <input id="targetDeviceId" autocomplete="off">
+=======
+              <input id="userId" value="user-web-1" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="targetDeviceId">目标主机设备 ID</label>
+              <input id="targetDeviceId" value="host-1" autocomplete="off">
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
             </div>
             <div class="field">
               <label for="signalUrl">信令地址</label>
@@ -327,7 +335,11 @@ constexpr std::string_view kBrowserControllerHtml = R"RDC_HTML(<!doctype html>
       </div>
     </section>
   </div>
+<<<<<<< HEAD
   <script src="/controller.js?v=20260401-4"></script>
+=======
+  <script src="/controller.js?v=20260331-8"></script>
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 </body>
 </html>)RDC_HTML";
 constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
@@ -359,6 +371,7 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
   const wsScheme = window.location.protocol === "https:" ? "wss" : "ws";
   const defaultSignalUrl = `${wsScheme}://${window.location.host}/signal`;
   const query = new URLSearchParams(window.location.search);
+<<<<<<< HEAD
   const preferRealtimeControl = query.get("controlRt") === "1";
   const preferDataChannelControl = query.get("dcControl") === "1";
 
@@ -371,6 +384,12 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
   if (query.has("target")) {
     elements.targetDeviceId.value = query.get("target") || "";
   }
+=======
+
+  elements.signalUrl.value = query.get("signal") || defaultSignalUrl;
+  elements.userId.value = query.get("user") || elements.userId.value;
+  elements.targetDeviceId.value = query.get("target") || elements.targetDeviceId.value;
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
   elements.remoteVideo.muted = true;
   elements.remoteVideo.autoplay = true;
   elements.remoteVideo.playsInline = true;
@@ -399,6 +418,7 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
       this.pendingMouseSync = null;
       this.mouseSyncFrameRequested = false;
       this.lastMouseSyncSignature = "";
+<<<<<<< HEAD
       this.preferRealtimeControl = preferRealtimeControl;
       this.preferDataChannelControl = preferDataChannelControl;
       this.pressedMouseButtons = new Set();
@@ -406,6 +426,10 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
       this.controlChannelVerified = false;
       this.realtimeControlChannelVerified = false;
       this.loggedControlFallbackLabels = new Set();
+=======
+      this.pressedMouseButtons = new Set();
+      this.pressedKeys = new Set();
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     }
 
     log(message) {
@@ -477,6 +501,7 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
     isDataChannelOpen(channel) {
       return channel !== null && channel.readyState === "open";
     }
+<<<<<<< HEAD
 )RDC_JS"
 R"RDC_JS(
 
@@ -509,6 +534,8 @@ R"RDC_JS(
         this.loggedControlFallbackLabels.delete(label);
       }
     }
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
     /**
      * @brief 判断控制负载是否应优先走实时控制通道。
@@ -517,7 +544,11 @@ R"RDC_JS(
      */
     isRealtimeControlPayload(payload) {
       const type = payload && typeof payload.type === "string" ? payload.type : "";
+<<<<<<< HEAD
       return this.preferRealtimeControl && (type === "mouse_move" || type === "mouse_wheel");
+=======
+      return type === "mouse_move" || type === "mouse_wheel";
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     }
 
     /**
@@ -534,6 +565,7 @@ R"RDC_JS(
      * @param payload 待发送的控制消息对象。
      * @returns {RTCDataChannel|null} 返回可用数据通道对象。
      */
+<<<<<<< HEAD
     getPreferredDataChannel(payload, options = {}) {
       const allowUnverified = options.allowUnverified === true;
 
@@ -553,6 +585,21 @@ R"RDC_JS(
         }
         if (this.isDataChannelOpen(this.realtimeControlChannel) &&
             (allowUnverified || this.isControlChannelVerified("control_rt"))) {
+=======
+    getPreferredDataChannel(payload) {
+      if (this.isRealtimeControlPayload(payload)) {
+        if (this.isDataChannelOpen(this.realtimeControlChannel)) {
+          return this.realtimeControlChannel;
+        }
+        if (this.isDataChannelOpen(this.controlChannel)) {
+          return this.controlChannel;
+        }
+      } else {
+        if (this.isDataChannelOpen(this.controlChannel)) {
+          return this.controlChannel;
+        }
+        if (this.isDataChannelOpen(this.realtimeControlChannel)) {
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
           return this.realtimeControlChannel;
         }
       }
@@ -591,9 +638,12 @@ R"RDC_JS(
               data: payload
             }
           }));
+<<<<<<< HEAD
         if (payload && typeof payload.type === "string" && payload.type !== "mouse_move") {
           this.log(`控制消息通过信令发送: type=${payload.type}, channel=${this.getPreferredControlChannelLabel(payload)}`);
         }
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
         return true;
       } catch (error) {
         this.log(`${logErrorPrefix}: ${formatError(error)}`);
@@ -607,18 +657,26 @@ R"RDC_JS(
      * @param logErrorPrefix 发送失败时的日志前缀。
      * @returns {boolean} 返回是否成功发送。
      */
+<<<<<<< HEAD
     sendDataChannelControlPayload(payload, logErrorPrefix = "控制通道发送失败", options = {}) {
       const channel = this.getPreferredDataChannel(payload, options);
+=======
+    sendDataChannelControlPayload(payload, logErrorPrefix = "控制通道发送失败") {
+      const channel = this.getPreferredDataChannel(payload);
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
       if (channel === null) {
         return false;
       }
 
       try {
         channel.send(JSON.stringify(payload));
+<<<<<<< HEAD
         if (payload && typeof payload.type === "string" && payload.type !== "mouse_move") {
           const channelLabel = channel === this.realtimeControlChannel ? "control_rt" : "control";
           this.log(`控制消息通过数据通道发送: type=${payload.type}, channel=${channelLabel}`);
         }
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
         return true;
       } catch (error) {
         this.log(`${logErrorPrefix}: ${formatError(error)}`);
@@ -639,6 +697,7 @@ R"RDC_JS(
 
       const friendlyLabel = label === "control_rt" ? "实时控制" : "控制";
       channel.onopen = () => {
+<<<<<<< HEAD
         this.setControlChannelVerified(label, false);
         this.log(`${friendlyLabel}数据通道已打开`);
         if (options.sendPing === true) {
@@ -663,16 +722,31 @@ R"RDC_JS(
       };
       channel.onclose = () => {
         this.setControlChannelVerified(label, false);
+=======
+        this.log(`${friendlyLabel}数据通道已打开`);
+        if (options.sendPing === true) {
+          channel.send(JSON.stringify({
+            type: "ping",
+            seq: 1,
+            ts: Math.floor(Date.now() / 1000)
+          }));
+        }
+      };
+      channel.onclose = () => {
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
         this.log(`${friendlyLabel}数据通道已关闭`);
         if (!this.canSendControlTransport()) {
           this.setRemoteInputActive(false, `${friendlyLabel}数据通道已关闭，停止远端输入`);
         }
       };
       channel.onmessage = (event) => {
+<<<<<<< HEAD
         if (!this.isControlChannelVerified(label)) {
           this.setControlChannelVerified(label, true);
           this.log(`${friendlyLabel}数据通道已通过回包验证，后续控制将优先走数据通道`);
         }
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
         this.log(`${friendlyLabel}通道数据 <- ${event.data}`);
       };
     }
@@ -684,6 +758,7 @@ R"RDC_JS(
      * @returns {boolean} 返回是否成功发送。
      */
     sendControlPayload(payload, logErrorPrefix = "控制消息发送失败") {
+<<<<<<< HEAD
       if (this.preferDataChannelControl) {
         if (this.sendDataChannelControlPayload(payload, logErrorPrefix)) {
           return true;
@@ -707,6 +782,13 @@ R"RDC_JS(
       }
 
       return this.sendDataChannelControlPayload(payload, logErrorPrefix, { allowUnverified: true });
+=======
+      if (this.sendDataChannelControlPayload(payload, logErrorPrefix)) {
+        return true;
+      }
+
+      return this.sendSignalControlPayload(payload, logErrorPrefix);
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     }
 
     /**
@@ -1446,6 +1528,7 @@ R"RDC_JS(
         sendPing: true
       });
 
+<<<<<<< HEAD
       if (this.preferRealtimeControl) {
         try {
           this.realtimeControlChannel = peer.createDataChannel("control_rt", {
@@ -1457,6 +1540,17 @@ R"RDC_JS(
           this.realtimeControlChannel = null;
           this.log(`创建实时控制数据通道失败: ${formatError(error)}`);
         }
+=======
+      try {
+        this.realtimeControlChannel = peer.createDataChannel("control_rt", {
+          ordered: false,
+          maxRetransmits: 0
+        });
+        this.attachControlChannel(this.realtimeControlChannel, "control_rt");
+      } catch (error) {
+        this.realtimeControlChannel = null;
+        this.log(`创建实时控制数据通道失败: ${formatError(error)}`);
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
       }
 
       const offer = await peer.createOffer();
@@ -1581,6 +1675,7 @@ R"RDC_JS(
   controller.setOverlay("正在等待远端视频轨");
   controller.updateSessionSummary();
   controller.log(`浏览器控制端页面脚本已加载，当前协议=${window.location.protocol || "unknown"}`);
+<<<<<<< HEAD
   controller.log(
     preferDataChannelControl
       ? (preferRealtimeControl
@@ -1588,6 +1683,8 @@ R"RDC_JS(
           : "已显式启用数据通道控制实验路径，默认优先尝试 control")
       : "默认使用信令通道发送键鼠控制；如需测试数据通道控制，请在地址后追加 ?dcControl=1，可叠加 ?controlRt=1"
   );
+=======
+>>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
   window.addEventListener("error", (event) => {
     controller.log(`页面脚本异常: ${event.message || "未知错误"}`);

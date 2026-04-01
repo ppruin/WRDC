@@ -1,0 +1,44 @@
+mimalloc 版本: 225
+controller connecting to ws://127.0.0.1:5000/signal as user user-1, target device host-1
+controller signaling <- {"connectionId":"conn_6","message":"register as host or controller to begin","type":"hello"}
+controller registered, creating session
+controller session created: sess_3
+[peer:controller][sess_3] starting peer session
+[peer:controller][sess_3] creating peer connection
+[peer:controller][sess_3] configured H.264 video track on mid video
+[peer:controller][sess_3] created control data channel
+[peer:controller][2026-03-27 22:57:13.463 WARN  [80736] [rtc::PeerConnection::setLocalDescription@133] Unexpected local description in signaling state have-local-offer, ignoring
+sess_3] peer connection state -> connecting
+[peer:controller][sess_3] requested local description
+2026-03-27 22:57:13.467 WARN  [52664] [rtc::impl::DtlsTransport::DtlsTransport@810] AES-GCM for SRTP is not supported, falling back to default profile
+[peer:controller][sess_3] track open -> video
+[peer:controller][sess_3] peer connection state -> connected
+[peer:controller][sess_3] data channel open -> control
+controller data <- [control] {"echoSeq":1,"type":"pong"}
+controller delaying close by 3000ms
+[peer:controller][sess_3] received media payload on video, sample=1, bytes=14
+[peer:controller][sess_3] received media payload on video, sample=2, bytes=39
+[peer:controller][sess_3] received media payload on video, sample=3, bytes=16
+[peer:controller][sess_3] received media payload on video, sample=4, bytes=63
+[peer:controller][sess_3] received media payload on video, sample=5, bytes=255
+[peer:controller][sess_3] received media payload on video, sample=60, bytes=1224
+[peer:controller][sess_3] received media payload on video, sample=120, bytes=38
+[peer:controller][sess_3] received media payload on video, sample=180, bytes=1138
+[peer:controller][sess_3] received media payload on video, sample=240, bytes=1108
+[peer:controller][sess_3] received media payload on video, sample=300, bytes=14
+[peer:controller][sess_3] received media payload on video, sample=360, bytes=1205
+[peer:controller][sess_3] received media payload on video, sample=420, bytes=1184
+[peer:controller][sess_3] received media payload on video, sample=480, bytes=1188
+[peer:controller][sess_3] received media payload on video, sample=540, bytes=1216
+[peer:controller][sess_3] received media payload on video, sample=600, bytes=16
+[peer:controller][sess_3] received media payload on video, sample=660, bytes=14
+[peer:controller][sess_3] received media payload on video, sample=720, bytes=1231
+[peer:controller][sess_3] received media payload on video, sample=780, bytes=1196
+[peer:controller][sess_3] received media payload on video, sample=840, bytes=1223
+[peer:controller][sess_3] received media payload on video, sample=900, bytes=1223
+[peer:controller][sess_3] received media payload on video, sample=960, bytes=1219
+[peer:controller][sess_3] received media payload on video, sample=1020, bytes=1210
+[peer:controller][sess_3] received media payload on video, sample=1080, bytes=1077
+[peer:controller][sess_3] received media payload on video, sample=1140, bytes=1191
+[peer:controller][sess_3] received media payload on video, sample=1200, bytes=14
+[peer:controller][sess_3] received media payload on video, sample=1260, bytes=1191

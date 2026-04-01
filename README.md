@@ -4,7 +4,7 @@
 - mimalloc 的 VS 工程源码
 - ImGUI 的 DX12 版本的 VS 工程源码
 - vcpkg 进行了部分包管理器
-  `
+  ```
   {
   "dependencies": [
     {
@@ -23,7 +23,7 @@
       "name": "openh264"
     }
   ]
-}`
+}```
 
 
 # 项目执行流程示意 

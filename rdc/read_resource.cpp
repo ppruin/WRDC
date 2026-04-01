@@ -9,12 +9,7 @@
 
 std::vector<unsigned char> LoadBinaryResource(HINSTANCE hinstance,
                                               const int resource_id,
-<<<<<<< HEAD
-                                              const wchar_t* const resource_type) 
-{
-=======
                                               const wchar_t* const resource_type) {
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     const HRSRC resource_handle = ::FindResourceW(hinstance,
                                                   MAKEINTRESOURCEW(resource_id),
                                                   resource_type);

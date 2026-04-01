@@ -138,7 +138,6 @@ bool IsControlChannelLabel(const std::string_view channel_label) {
     return channel_label == "control" || channel_label == "control_rt";
 }
 
-<<<<<<< HEAD
 /**
  * @brief 判断是否应记录高频控制输入追踪日志。
  * @param message_count 当前累计消息数。
@@ -157,8 +156,6 @@ bool ShouldWarnInputQueueBacklog(const std::size_t pending_count) {
     return pending_count == 16 || pending_count == 32 || pending_count % 64 == 0;
 }
 
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 #ifdef _WIN32
 /**
  * @brief 发送单条 Windows 输入事件并在失败时尝试旧版 Win32 回退路径。
@@ -412,6 +409,30 @@ std::optional<WORD> MapBrowserCodeToVirtualKey(const std::string_view code) {
         {"MetaRight", VK_RWIN},
         {"ContextMenu", VK_APPS},
         {"PrintScreen", VK_SNAPSHOT},
+        {"BrowserBack", VK_BROWSER_BACK},
+        {"BrowserForward", VK_BROWSER_FORWARD},
+        {"BrowserRefresh", VK_BROWSER_REFRESH},
+        {"BrowserStop", VK_BROWSER_STOP},
+        {"BrowserSearch", VK_BROWSER_SEARCH},
+        {"BrowserFavorites", VK_BROWSER_FAVORITES},
+        {"BrowserHome", VK_BROWSER_HOME},
+        {"AudioVolumeMute", VK_VOLUME_MUTE},
+        {"AudioVolumeDown", VK_VOLUME_DOWN},
+        {"AudioVolumeUp", VK_VOLUME_UP},
+        {"MediaTrackNext", VK_MEDIA_NEXT_TRACK},
+        {"MediaTrackPrevious", VK_MEDIA_PREV_TRACK},
+        {"MediaStop", VK_MEDIA_STOP},
+        {"MediaPlayPause", VK_MEDIA_PLAY_PAUSE},
+        {"LaunchMail", VK_LAUNCH_MAIL},
+        {"LaunchMediaPlayer", VK_LAUNCH_MEDIA_SELECT},
+        {"LaunchApp1", VK_LAUNCH_APP1},
+        {"LaunchApp2", VK_LAUNCH_APP2},
+        {"Sleep", VK_SLEEP},
+        {"Convert", VK_CONVERT},
+        {"NonConvert", VK_NONCONVERT},
+        {"KanaMode", VK_KANA},
+        {"Lang1", VK_HANGUL},
+        {"Lang2", VK_HANJA},
         {"Semicolon", VK_OEM_1},
         {"Equal", VK_OEM_PLUS},
         {"Comma", VK_OEM_COMMA},
@@ -424,11 +445,15 @@ std::optional<WORD> MapBrowserCodeToVirtualKey(const std::string_view code) {
         {"BracketRight", VK_OEM_6},
         {"Quote", VK_OEM_7},
         {"IntlBackslash", VK_OEM_102},
+        {"IntlYen", VK_OEM_5},
         {"NumpadMultiply", VK_MULTIPLY},
         {"NumpadAdd", VK_ADD},
         {"NumpadSubtract", VK_SUBTRACT},
         {"NumpadDecimal", VK_DECIMAL},
         {"NumpadDivide", VK_DIVIDE},
+#ifdef VK_OEM_NEC_EQUAL
+        {"NumpadEqual", VK_OEM_NEC_EQUAL},
+#endif
     };
 
     for (const auto& [candidate, vk] : mappings) 
@@ -438,6 +463,33 @@ std::optional<WORD> MapBrowserCodeToVirtualKey(const std::string_view code) {
     }
 
     return std::nullopt;
+}
+
+/**
+ * @brief 规范化浏览器上报的原生虚拟键值。
+ * @param virtual_key 浏览器 KeyboardEvent.keyCode。
+ * @return 返回可用结果；失败时返回空值。
+ */
+std::optional<WORD> NormalizeBrowserVirtualKey(const int virtual_key) {
+    if (virtual_key <= 0 || virtual_key > 0xFE) {
+        return std::nullopt;
+    }
+
+    return static_cast<WORD>(virtual_key);
+}
+
+/**
+ * @brief 解析浏览器按键对应的 Windows 虚拟键值，优先使用标准 code，失败时回退原生 keyCode。
+ * @param code 浏览器 KeyboardEvent.code。
+ * @param legacy_virtual_key 浏览器 KeyboardEvent.keyCode。
+ * @return 返回可用结果；失败时返回空值。
+ */
+std::optional<WORD> ResolveBrowserVirtualKey(const std::string_view code, const int legacy_virtual_key) {
+    if (const auto mapped_virtual_key = MapBrowserCodeToVirtualKey(code); mapped_virtual_key.has_value()) {
+        return mapped_virtual_key;
+    }
+
+    return NormalizeBrowserVirtualKey(legacy_virtual_key);
 }
 
 /**
@@ -473,33 +525,40 @@ bool IsExtendedBrowserKeyCode(const std::string_view code)
  * @param pressed 是否按下。
  * @return 返回是否成功或条件是否满足。
  */
-bool SendKeyboardInputEvent(const std::string_view code, const bool pressed) 
+bool SendKeyboardInputEvent(const std::string_view code, const int legacy_virtual_key, const bool pressed) 
 {
-    const auto vk = MapBrowserCodeToVirtualKey(code);
-<<<<<<< HEAD
+    const auto vk = ResolveBrowserVirtualKey(code, legacy_virtual_key);
     if (!vk.has_value()) {
         protocol::common::WriteErrorLine("主机端无法映射浏览器按键代码: code=" +
                                          std::string(code) +
+                                         ", virtualKey=" + std::to_string(legacy_virtual_key) +
                                          ", pressed=" + (pressed ? "true" : "false"));
         return false;
     }
-=======
-    if (!vk.has_value()) 
-        return false;
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
+
+    UINT mapped_scan = MapVirtualKeyW(*vk, MAPVK_VK_TO_VSC_EX);
+    if (mapped_scan == 0) {
+        mapped_scan = MapVirtualKeyW(*vk, MAPVK_VK_TO_VSC);
+    }
+
+    const WORD scan_code = static_cast<WORD>(mapped_scan & 0xFF);
+    const bool is_extended =
+        (mapped_scan & 0xFF00U) == 0xE000U ||
+        (mapped_scan & 0xFF00U) == 0xE100U ||
+        IsExtendedBrowserKeyCode(code);
 
     INPUT input{};
     input.type = INPUT_KEYBOARD;
     input.ki.wVk = *vk;
-    input.ki.wScan = static_cast<WORD>(MapVirtualKeyW(*vk, MAPVK_VK_TO_VSC));
+    input.ki.wScan = scan_code;
     input.ki.dwFlags = pressed ? 0 : KEYEVENTF_KEYUP;
 
-    if (IsExtendedBrowserKeyCode(code))
+    if (is_extended)
         input.ki.dwFlags |= KEYEVENTF_EXTENDEDKEY;
 
-    return SendSingleInput(input, pressed ? "键盘按下" : "键盘抬起", [vk = *vk, scan = input.ki.wScan, pressed, code]() {
+    return SendSingleInput(input, pressed ? "键盘按下" : "键盘抬起", [vk = *vk, scan = input.ki.wScan, pressed, is_extended]() {
         BYTE flags = pressed ? 0 : KEYEVENTF_KEYUP;
-        if (IsExtendedBrowserKeyCode(code))
+        if (is_extended)
             flags = static_cast<BYTE>(flags | KEYEVENTF_EXTENDEDKEY);
 
         keybd_event(static_cast<BYTE>(vk), static_cast<BYTE>(scan), flags, 0);
@@ -528,12 +587,9 @@ bool SendMouseButtonInputEvent(const int button, const bool pressed)
 	        flags = pressed ? MOUSEEVENTF_RIGHTDOWN : MOUSEEVENTF_RIGHTUP;
 	        break;
 	    default:
-<<<<<<< HEAD
             protocol::common::WriteErrorLine("主机端收到不支持的鼠标按键编号: button=" +
                                              std::to_string(button) +
                                              ", pressed=" + (pressed ? "true" : "false"));
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 	        return false;
     }
 
@@ -859,7 +915,6 @@ void HostClient::QueueInputControl(const Json& payload) {
  * @param payload 协议负载数据。
  */
 void HostClient::QueueKeyboardInputControl(const Json& payload) {
-<<<<<<< HEAD
     std::size_t pending_count = 0;
 
     {
@@ -873,11 +928,6 @@ void HostClient::QueueKeyboardInputControl(const Json& payload) {
             protocol::common::LogSeverity::Warning,
             "主机端输入队列积压: pending=" + std::to_string(pending_count) +
                 ", latestType=" + payload.value("type", ""));
-=======
-    {
-        std::scoped_lock lock(input_control_mutex_);
-        pending_input_controls_.push_back(payload);
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     }
 
     input_control_cv_.notify_one();
@@ -889,10 +939,7 @@ void HostClient::QueueKeyboardInputControl(const Json& payload) {
  */
 void HostClient::QueueMouseInputControl(const Json& payload) {
     bool queued = false;
-<<<<<<< HEAD
     std::size_t pending_count = 0;
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     {
         std::scoped_lock lock(input_control_mutex_);
         const std::string type = payload.value("type", "");
@@ -930,7 +977,6 @@ void HostClient::QueueMouseInputControl(const Json& payload) {
             }
             queued = true;
         }
-<<<<<<< HEAD
 
         pending_count = pending_input_controls_.size();
     }
@@ -942,11 +988,6 @@ void HostClient::QueueMouseInputControl(const Json& payload) {
                 "主机端输入队列积压: pending=" + std::to_string(pending_count) +
                     ", latestType=" + payload.value("type", ""));
         }
-=======
-    }
-
-    if (queued) {
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
         input_control_cv_.notify_one();
     }
 }
@@ -1007,13 +1048,11 @@ void HostClient::ApplyQueuedKeyboardInput(const Json& payload) {
     const std::string type = payload.value("type", "");
     if (type == "key_down" || type == "key_up") {
         const auto code = payload.value("code", "");
-        if (!code.empty()) {
-            static_cast<void>(SendKeyboardInputEvent(code, type == "key_down"));
-<<<<<<< HEAD
+        const int legacy_virtual_key = payload.value("virtualKey", 0);
+        if (!code.empty() || legacy_virtual_key > 0) {
+            static_cast<void>(SendKeyboardInputEvent(code, legacy_virtual_key, type == "key_down"));
         } else {
-            protocol::common::WriteErrorLine("主机端收到缺少 code 的键盘控制负载: " + payload.dump());
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
+            protocol::common::WriteErrorLine("主机端收到缺少 code/virtualKey 的键盘控制负载: " + payload.dump());
         }
     }
 #else
@@ -1030,11 +1069,8 @@ void HostClient::ApplyQueuedMouseMoveInput(const Json& payload) {
     const double normalized_y = payload.value("normalizedY", -1.0);
     if (normalized_x >= 0.0 && normalized_y >= 0.0) {
         static_cast<void>(SyncRemoteMousePosition(normalized_x, normalized_y));
-<<<<<<< HEAD
     } else {
         protocol::common::WriteErrorLine("主机端收到缺少归一化坐标的鼠标移动负载: " + payload.dump());
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     }
 }
 
@@ -1091,7 +1127,6 @@ void HostClient::HandleControlMessage(const std::string& session_id,
         is_control_channel &&
         (type == "mouse_move" || type == "mouse_button" || type == "mouse_wheel" || type == "key_down" || type == "key_up");
 
-<<<<<<< HEAD
     std::uint64_t high_frequency_input_count = 0;
     if (is_high_frequency_input) {
         std::scoped_lock lock(mutex_);
@@ -1114,12 +1149,6 @@ void HostClient::HandleControlMessage(const std::string& session_id,
             protocol::common::WriteInfoLine("主机端数据 <- [" + std::string(channel_label) + "] " + payload.dump());
         }
     }
-=======
-    const bool should_log = !is_high_frequency_input;
-
-    if (should_log) 
-        protocol::common::WriteInfoLine("主机端数据 <- [" + std::string(channel_label) + "] " + payload.dump());
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
     if (!is_control_channel) 
         return;
@@ -1204,7 +1233,6 @@ bool HostClient::HandleSignaledControlMessage(const std::string& session_id, con
 bool HostClient::SyncRemoteMousePosition(const double normalized_x, const double normalized_y) const 
 {
 #ifdef _WIN32
-<<<<<<< HEAD
     if (!desktop_output_bounds_ready_ || !desktop_output_bounds_.IsValid()) {
         static std::atomic_uint64_t missing_bounds_failures{0};
         const auto failure_count = ++missing_bounds_failures;
@@ -1223,13 +1251,6 @@ bool HostClient::SyncRemoteMousePosition(const double normalized_x, const double
             ", y=" + std::to_string(normalized_y));
         return false;
     }
-=======
-    if (!desktop_output_bounds_ready_ || !desktop_output_bounds_.IsValid())
-        return false;
-
-    if (!std::isfinite(normalized_x) || !std::isfinite(normalized_y))
-        return false;
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
     const auto clamped_x = std::clamp(normalized_x, 0.0, 1.0);
     const auto clamped_y = std::clamp(normalized_y, 0.0, 1.0);
@@ -1242,17 +1263,12 @@ bool HostClient::SyncRemoteMousePosition(const double normalized_x, const double
     const int virtual_top = GetSystemMetrics(SM_YVIRTUALSCREEN);
     const int virtual_width = GetSystemMetrics(SM_CXVIRTUALSCREEN);
     const int virtual_height = GetSystemMetrics(SM_CYVIRTUALSCREEN);
-<<<<<<< HEAD
     if (virtual_width <= 0 || virtual_height <= 0) {
         protocol::common::WriteErrorLine(
             "主机端鼠标同步失败: 虚拟桌面尺寸非法, width=" + std::to_string(virtual_width) +
             ", height=" + std::to_string(virtual_height));
         return false;
     }
-=======
-    if (virtual_width <= 0 || virtual_height <= 0)
-        return false;
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
     if (SetCursorPos(target_x, target_y) != FALSE)
         return true;

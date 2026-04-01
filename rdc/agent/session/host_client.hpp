@@ -63,10 +63,7 @@ private:
      */
     struct SessionRuntime {
         std::shared_ptr<PeerSession> peer_session;
-<<<<<<< HEAD
         std::uint64_t received_control_input_count = 0;
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     };
 
     /**

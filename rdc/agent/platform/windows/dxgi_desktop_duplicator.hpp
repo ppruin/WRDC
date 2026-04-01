@@ -77,6 +77,7 @@ private:
     Microsoft::WRL::ComPtr<IDXGIOutputDuplication> duplication_;
     Microsoft::WRL::ComPtr<ID3D11Texture2D> frame_texture_;
     D3D11_TEXTURE2D_DESC frame_texture_desc_{};
+    DXGI_OUTPUT_DESC output_desc_{};
     std::vector<DXGI_OUTDUPL_MOVE_RECT> move_rect_buffer_;
     std::vector<RECT> dirty_rect_buffer_;
     DXGI_OUTDUPL_DESC duplication_desc_{};

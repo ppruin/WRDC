@@ -210,6 +210,11 @@ void DxgiDesktopDuplicator::InitializeDuplication() {
         throw std::runtime_error("未找到请求输出索引对应的桌面输出设备");
     }
 
+    const HRESULT output_desc_hr = output_->GetDesc(&output_desc_);
+    if (FAILED(output_desc_hr)) {
+        throw MakeError("IDXGIOutput::GetDesc 调用失败", output_desc_hr);
+    }
+
     duplication_.Reset();
     const HRESULT hr = output_->DuplicateOutput(device_.Get(), &duplication_);
     if (FAILED(hr)) {
@@ -340,6 +345,8 @@ capture::DesktopFrame DxgiDesktopDuplicator::CopyFrame(ID3D11Texture2D* source_t
     device_context_->CopyResource(frame_texture_.Get(), source_texture);
 
     capture::DesktopFrame frame;
+    frame.desktop_left = output_desc_.DesktopCoordinates.left;
+    frame.desktop_top = output_desc_.DesktopCoordinates.top;
     frame.width = duplication_desc_.ModeDesc.Width;
     frame.height = duplication_desc_.ModeDesc.Height;
     frame.pixel_format = capture::DesktopFramePixelFormat::Bgra8Unorm;

@@ -51,6 +51,8 @@ struct DesktopMoveRect {
  * @brief 描述 DesktopFrame 的帧数据结构。
  */
 struct DesktopFrame {
+    std::int32_t desktop_left = 0;
+    std::int32_t desktop_top = 0;
     std::uint32_t width = 0;
     std::uint32_t height = 0;
     DesktopFramePixelFormat pixel_format = DesktopFramePixelFormat::Bgra8Unorm;

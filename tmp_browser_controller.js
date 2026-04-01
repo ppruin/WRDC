@@ -1,347 +1,4 @@
-/**
- * @file browser_controller_assets.cpp
- * @brief 实现 controller/ui/browser_controller_assets 相关的类型、函数与流程。
- */
-
-#include "browser_controller_assets.hpp"
-
-namespace rdc::controller::ui {
-
-namespace {
-
-#if defined(_DEBUG)
-#define RDC_BROWSER_CONTROLLER_DEBUG_LOG_LITERAL "true"
-#else
-#define RDC_BROWSER_CONTROLLER_DEBUG_LOG_LITERAL "false"
-#endif
-
-constexpr std::string_view kBrowserControllerHtml = R"RDC_HTML(<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RDC 浏览器控制端</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --bg: #f4eee3;
-      --bg-deep: #ded0b7;
-      --line: rgba(77, 65, 48, 0.18);
-      --line-strong: rgba(255,255,255,0.12);
-      --ink: #121922;
-      --muted: #66707a;
-      --soft: rgba(18, 25, 34, 0.62);
-      --accent: #0d6a65;
-      --accent-strong: #0a4549;
-      --danger: #b42318;
-    }
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      min-height: 100%;
-      font-family: "Microsoft YaHei UI", "Segoe UI Variable Text", "PingFang SC", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(13,106,101,0.22), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(180,35,24,0.12), transparent 26%),
-        linear-gradient(135deg, #f8f4ed 0%, var(--bg) 52%, var(--bg-deep) 100%);
-    }
-    body { overflow: hidden; }
-    button, input { font: inherit; }
-    .app { position: relative; min-height: 100vh; }
-    .screen { position: fixed; inset: 0; transition: opacity 220ms ease, transform 220ms ease; }
-    .screen-auth { display: grid; place-items: center; padding: clamp(20px, 4vw, 44px); }
-    .screen-viewer { background: #030507; opacity: 0; pointer-events: none; }
-    .app[data-screen="auth"] .screen-auth { opacity: 1; pointer-events: auto; transform: scale(1); }
-    .app[data-screen="auth"] .screen-viewer { opacity: 0; pointer-events: none; }
-    .app[data-screen="viewer"] .screen-auth { opacity: 0; pointer-events: none; transform: scale(1.02); }
-    .app[data-screen="viewer"] .screen-viewer { opacity: 1; pointer-events: auto; }
-    .auth-panel {
-      width: min(560px, 100%);
-      padding: clamp(24px, 4vw, 38px);
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.48);
-      background: linear-gradient(180deg, rgba(255,252,247,0.9) 0%, rgba(249,241,228,0.76) 100%);
-      box-shadow: 0 24px 80px rgba(30,37,43,0.16);
-      backdrop-filter: blur(20px);
-    }
-    .eyebrow {
-      margin: 0 0 14px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent-strong);
-    }
-    .auth-title { margin: 0; font-size: clamp(32px, 5vw, 52px); line-height: 0.95; letter-spacing: -0.04em; }
-    .auth-subtitle { margin: 16px 0 0; color: var(--soft); font-size: 15px; line-height: 1.7; }
-    .auth-form { display: grid; gap: 18px; margin-top: 30px; }
-    .field-grid, .field { display: grid; gap: 14px; }
-    .field { gap: 8px; }
-    .field label { font-size: 13px; color: var(--muted); }
-    .field input {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.78);
-      color: var(--ink);
-      outline: none;
-      transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
-    }
-    .field input:focus {
-      border-color: rgba(13,106,101,0.48);
-      box-shadow: 0 0 0 4px rgba(13,106,101,0.12);
-      background: #fff;
-    }
-    .status {
-      min-height: 52px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(13,106,101,0.09);
-      color: var(--accent-strong);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-    button {
-      border: 0;
-      border-radius: 16px;
-      padding: 14px 18px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform 120ms ease, opacity 120ms ease, background 120ms ease, border-color 120ms ease;
-    }
-    button:hover { transform: translateY(-1px); }
-    button:active { transform: translateY(0); }
-    button.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-      color: #fff;
-      box-shadow: 0 18px 30px rgba(10,69,73,0.22);
-    }
-    button.ghost { background: rgba(255,255,255,0.08); color: #f6f7fa; border: 1px solid rgba(255,255,255,0.12); }
-    button.danger { background: rgba(180,35,24,0.18); color: #ffe0db; border: 1px solid rgba(255,255,255,0.1); }
-    button.full { width: 100%; }
-    button:disabled { opacity: 0.55; cursor: default; transform: none; }
-    .viewer-shell {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at center, rgba(15,24,32,0.42), transparent 40%),
-        linear-gradient(180deg, #071017 0%, #020409 100%);
-    }
-    .viewer-shell::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top, rgba(13,106,101,0.22), transparent 38%),
-        linear-gradient(180deg, rgba(4,8,12,0.04) 0%, rgba(4,8,12,0.55) 100%);
-      opacity: 1;
-      transition: opacity 180ms ease;
-      pointer-events: none;
-    }
-    .viewer-shell[data-live="true"]::after { opacity: 0.18; }
-    video {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      background: #000;
-      cursor: crosshair;
-      outline: none;
-    }
-    .viewer-shell[data-pointer-capture="true"] video { cursor: none !important; }
-    .viewer-controls {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 160ms ease;
-    }
-    .viewer-controls.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .viewer-controls-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(3,5,7,0.4);
-      backdrop-filter: blur(14px);
-    }
-    .control-window {
-      position: relative;
-      z-index: 1;
-      width: min(760px, calc(100vw - 48px));
-      max-height: min(78vh, 760px);
-      display: grid;
-      grid-template-rows: auto auto minmax(0, 1fr);
-      gap: 16px;
-      padding: 24px;
-      border-radius: 28px;
-      border: 1px solid var(--line-strong);
-      background: linear-gradient(180deg, rgba(15,24,32,0.92) 0%, rgba(10,14,20,0.84) 100%);
-      color: #f6f7fa;
-      box-shadow: 0 28px 70px rgba(0,0,0,0.38);
-      overflow: hidden;
-    }
-    .control-window.no-log { grid-template-rows: auto auto; }
-    .control-window.no-log .viewer-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .control-window.no-log #clearLogBtn,
-    .control-window.no-log .log-panel { display: none; }
-    .control-window-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-start;
-    }
-    .session-label {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.56);
-    }
-    .session-summary { display: block; font-size: clamp(18px, 3vw, 30px); line-height: 1.1; letter-spacing: -0.04em; }
-    .viewer-status { margin-top: 10px; font-size: 13px; color: rgba(255,255,255,0.76); line-height: 1.5; }
-    .shortcut-tip {
-      font-size: 12px;
-      color: rgba(255,255,255,0.62);
-      line-height: 1.6;
-    }
-    .viewer-actions {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-    }
-    .video-overlay {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 32px;
-      text-align: center;
-      color: rgba(247,249,251,0.9);
-      font-size: clamp(18px, 2.5vw, 30px);
-      letter-spacing: 0.08em;
-      background:
-        radial-gradient(circle at center, rgba(13,106,101,0.12), transparent 34%),
-        linear-gradient(180deg, rgba(3,5,7,0.18) 0%, rgba(3,5,7,0.7) 100%);
-      transition: opacity 150ms ease;
-      pointer-events: none;
-    }
-    .video-overlay.hidden { opacity: 0; }
-    .log-panel {
-      min-height: 0;
-      display: grid;
-      grid-template-rows: auto minmax(0, 1fr);
-      gap: 10px;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      overflow: hidden;
-    }
-    .log-title {
-      padding: 14px 16px 0;
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.72);
-    }
-    .log {
-      overflow: auto;
-      min-height: 180px;
-      max-height: min(34vh, 320px);
-      padding: 0 16px 16px;
-      white-space: pre-wrap;
-      font-size: 12px;
-      line-height: 1.6;
-      font-family: Consolas, "Cascadia Mono", monospace;
-    }
-    @media (max-width: 720px) {
-      .auth-panel { border-radius: 24px; padding: 24px; }
-      .viewer-controls { padding: 16px; }
-      .control-window {
-        width: min(100%, calc(100vw - 32px));
-        padding: 18px;
-        max-height: min(82vh, 760px);
-      }
-      .control-window-head {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .viewer-actions { grid-template-columns: 1fr; }
-      .log { max-height: min(32vh, 260px); }
-    }
-  </style>
-</head>
-<body>
-  <div id="app" class="app" data-screen="auth">
-    <section class="screen screen-auth">
-      <div class="auth-panel">
-        <p class="eyebrow">Remote Desktop Control</p>
-        <h1 class="auth-title">登录远程会话</h1>
-        <p class="auth-subtitle">先确认控制端身份、目标主机和信令地址。提交后页面立即切换到全屏观看态，一旦远端视频轨到达，桌面画面将直接铺满整个视口。</p>
-        <form id="authForm" class="auth-form">
-          <div class="field-grid">
-            <div class="field">
-              <label for="userId">控制端用户 ID</label>
-              <input id="userId" autocomplete="off">
-            </div>
-            <div class="field">
-              <label for="targetDeviceId">目标主机设备 ID</label>
-              <input id="targetDeviceId" autocomplete="off">
-            </div>
-            <div class="field">
-              <label for="signalUrl">信令地址</label>
-              <input id="signalUrl" autocomplete="off">
-            </div>
-          </div>
-          <button id="connectBtn" class="primary full" type="submit">确认登录并进入会话</button>
-          <div id="authStatusBox" class="status">等待连接</div>
-        </form>
-      </div>
-    </section>
-    <section class="screen screen-viewer">
-      <div id="viewerShell" class="viewer-shell" data-live="false" data-pointer-capture="false">
-        <video id="remoteVideo" autoplay playsinline tabindex="0" aria-label="远端桌面视频"></video>
-        <div id="videoOverlay" class="video-overlay" aria-hidden="true"></div>
-        <div id="viewerControls" class="viewer-controls" aria-hidden="true">
-          <div id="viewerControlsBackdrop" class="viewer-controls-backdrop"></div>
-          <section class="control-window" id="controlWindow" role="dialog" aria-modal="false" aria-label="会话控制窗口">
-            <div class="control-window-head">
-              <div>
-                <span class="session-label">会话控制窗口</span>
-                <strong id="sessionSummary" class="session-summary">未连接</strong>
-                <div id="viewerStatusBox" class="viewer-status">等待远端桌面</div>
-              </div>
-              <button id="hideControlsBtn" class="ghost" type="button">关闭窗口</button>
-            </div>
-            <div class="shortcut-tip">按 Ctrl + F2 可打开或关闭这个窗口。</div>
-            <div class="viewer-actions">
-              <button id="backBtn" class="ghost" type="button">返回登录</button>
-              <button id="disconnectBtn" class="danger" type="button" disabled>断开会话</button>
-              <button id="clearLogBtn" class="ghost" type="button">清空日志</button>
-            </div>
-            <div class="log-panel">
-              <div class="log-title">会话日志</div>
-              <div id="logBox" class="log"></div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script src="/controller.js?v=20260401-6"></script>
-</body>
-</html>)RDC_HTML";
-constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
+(() => {
   const $ = (id) => document.getElementById(id);
   const formatError = (error) => error instanceof Error ? error.message : String(error);
 
@@ -357,7 +14,6 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
     authStatusBox: $("authStatusBox"),
     viewerStatusBox: $("viewerStatusBox"),
     sessionSummary: $("sessionSummary"),
-    controlWindow: $("controlWindow"),
     viewerControls: $("viewerControls"),
     viewerControlsBackdrop: $("viewerControlsBackdrop"),
     hideControlsBtn: $("hideControlsBtn"),
@@ -371,7 +27,6 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
   const wsScheme = window.location.protocol === "https:" ? "wss" : "ws";
   const defaultSignalUrl = `${wsScheme}://${window.location.host}/signal`;
   const query = new URLSearchParams(window.location.search);
-  const enableDebugLog = )RDC_JS" RDC_BROWSER_CONTROLLER_DEBUG_LOG_LITERAL R"RDC_JS(;
   const preferRealtimeControl = query.get("controlRt") === "1";
   const preferDataChannelControl = query.get("dcControl") === "1";
 
@@ -419,18 +74,9 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
       this.controlChannelVerified = false;
       this.realtimeControlChannelVerified = false;
       this.loggedControlFallbackLabels = new Set();
-      this.lastRemotePointerPosition = null;
-      this.setPointerCaptureActive(false);
-      if (!enableDebugLog && this.view.controlWindow) {
-        this.view.controlWindow.classList.add("no-log");
-      }
     }
 
     log(message) {
-      if (!enableDebugLog || !this.view.logBox) {
-        return;
-      }
-
       const now = new Date().toLocaleTimeString();
       this.view.logBox.textContent += `[${now}] ${message}\n`;
       this.view.logBox.scrollTop = this.view.logBox.scrollHeight;
@@ -477,109 +123,7 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
     }
 
     clearLog() {
-      if (!enableDebugLog || !this.view.logBox) {
-        return;
-      }
-
       this.view.logBox.textContent = "";
-    }
-
-    /**
-     * @brief 判断当前浏览器是否支持鼠标锁定。
-     * @returns {boolean} 返回是否支持指针锁定能力。
-     */
-    isPointerLockSupported() {
-      return typeof this.view.remoteVideo.requestPointerLock === "function" &&
-        typeof document.exitPointerLock === "function";
-    }
-
-    /**
-     * @brief 判断远端桌面是否已处于鼠标捕获状态。
-     * @returns {boolean} 返回是否已锁定到远端视频元素。
-     */
-    isPointerCaptureActive() {
-      return document.pointerLockElement === this.view.remoteVideo;
-    }
-
-    /**
-     * @brief 更新当前鼠标捕获状态对应的页面表现。
-     * @param isActive 是否启用鼠标捕获表现。
-     */
-    setPointerCaptureActive(isActive) {
-      this.view.viewerShell.dataset.pointerCapture = isActive ? "true" : "false";
-    }
-
-    /**
-     * @brief 请求浏览器隐藏并锁定本地鼠标到远端视频区域。
-     */
-    requestPointerCapture() {
-      if (this.view.app.dataset.screen !== "viewer" ||
-          this.view.viewerControls.classList.contains("open") ||
-          !this.isPointerLockSupported() ||
-          this.isPointerCaptureActive()) {
-        return;
-      }
-
-      try {
-        const maybePromise = this.view.remoteVideo.requestPointerLock();
-        if (maybePromise && typeof maybePromise.catch === "function") {
-          maybePromise.catch((error) => {
-            this.log(`浏览器鼠标捕获请求失败: ${formatError(error)}`);
-          });
-        }
-      } catch (error) {
-        this.log(`浏览器鼠标捕获请求失败: ${formatError(error)}`);
-      }
-    }
-
-    /**
-     * @brief 主动释放浏览器鼠标捕获状态。
-     */
-    releasePointerCapture() {
-      if (!this.isPointerLockSupported()) {
-        this.setPointerCaptureActive(false);
-        return;
-      }
-
-      if (!this.isPointerCaptureActive()) {
-        this.setPointerCaptureActive(false);
-        return;
-      }
-
-      try {
-        const maybePromise = document.exitPointerLock();
-        if (maybePromise && typeof maybePromise.catch === "function") {
-          maybePromise.catch((error) => {
-            this.log(`浏览器鼠标捕获释放失败: ${formatError(error)}`);
-          });
-        }
-      } catch (error) {
-        this.log(`浏览器鼠标捕获释放失败: ${formatError(error)}`);
-      }
-    }
-
-    /**
-     * @brief 同步浏览器指针锁定状态。
-     */
-    handlePointerLockChange() {
-      const isActive = this.isPointerCaptureActive();
-      this.setPointerCaptureActive(isActive);
-      if (isActive) {
-        this.log("浏览器鼠标已隐藏并锁定到远端桌面");
-        return;
-      }
-
-      if (this.remoteInputActive) {
-        this.setRemoteInputActive(false, "浏览器鼠标捕获已释放，暂停远端输入");
-      }
-    }
-
-    /**
-     * @brief 处理浏览器鼠标捕获失败事件。
-     */
-    handlePointerLockError() {
-      this.setPointerCaptureActive(false);
-      this.log("浏览器鼠标捕获失败");
     }
 
     /**
@@ -601,8 +145,7 @@ constexpr std::string_view kBrowserControllerScript = R"RDC_JS((() => {
     isDataChannelOpen(channel) {
       return channel !== null && channel.readyState === "open";
     }
-)RDC_JS"
-R"RDC_JS(
+
 
     /**
      * @brief 判断指定逻辑控制通道是否已经通过回包验证。
@@ -832,8 +375,7 @@ R"RDC_JS(
 
       return this.sendDataChannelControlPayload(payload, logErrorPrefix, { allowUnverified: true });
     }
-)RDC_JS"
-R"RDC_JS(
+
 
     /**
      * @brief 主动释放当前仍然保持按下状态的远端键鼠输入。
@@ -884,15 +426,11 @@ R"RDC_JS(
 
       if (!isActive) {
         this.releaseAllRemoteInputs();
-        this.releasePointerCapture();
       }
 
       this.remoteInputActive = isActive;
       this.pendingMouseSync = null;
       this.lastMouseSyncSignature = "";
-      if (!isActive) {
-        this.lastRemotePointerPosition = null;
-      }
 
       if (focusVideo) {
         this.view.remoteVideo.focus({ preventScroll: true });
@@ -948,10 +486,11 @@ R"RDC_JS(
     }
 
     /**
-     * @brief 计算当前视频在页面中的实际渲染区域。
-     * @returns {{rect:DOMRect, renderedWidth:number, renderedHeight:number, offsetX:number, offsetY:number}|null} 返回实际渲染区域信息。
+     * @brief 计算鼠标在实际视频画面内的归一化坐标。
+     * @param event 浏览器指针事件对象。
+     * @returns {{normalizedX:number, normalizedY:number}|null} 返回归一化结果；若命中黑边或画面无效则返回空值。
      */
-    getRenderedVideoMetrics() {
+    getNormalizedMousePosition(event) {
       const video = this.view.remoteVideo;
       const rect = video.getBoundingClientRect();
       if (rect.width <= 0 || rect.height <= 0 || video.videoWidth <= 0 || video.videoHeight <= 0) {
@@ -973,96 +512,16 @@ R"RDC_JS(
         offsetY = (rect.height - renderedHeight) / 2;
       }
 
-      return {
-        rect,
-        renderedWidth,
-        renderedHeight,
-        offsetX,
-        offsetY
-      };
-    }
-
-    /**
-     * @brief 记录最近一次远端鼠标归一化位置。
-     * @param position 待记录的归一化坐标。
-     * @returns {{normalizedX:number, normalizedY:number}|null} 返回裁剪后的归一化坐标。
-     */
-    rememberRemotePointerPosition(position) {
-      if (!position) {
-        return null;
-      }
-
-      const normalizedPosition = {
-        normalizedX: Math.min(Math.max(position.normalizedX, 0), 1),
-        normalizedY: Math.min(Math.max(position.normalizedY, 0), 1)
-      };
-      this.lastRemotePointerPosition = normalizedPosition;
-      return normalizedPosition;
-    }
-
-    /**
-     * @brief 计算鼠标在实际视频画面内的归一化坐标。
-     * @param event 浏览器指针事件对象。
-     * @returns {{normalizedX:number, normalizedY:number}|null} 返回归一化结果；若命中黑边或画面无效则返回空值。
-     */
-    getNormalizedMousePosition(event) {
-      const metrics = this.getRenderedVideoMetrics();
-      if (!metrics) {
-        return null;
-      }
-
-      const { rect, renderedWidth, renderedHeight, offsetX, offsetY } = metrics;
-
       const localX = event.clientX - rect.left - offsetX;
       const localY = event.clientY - rect.top - offsetY;
       if (localX < 0 || localY < 0 || localX > renderedWidth || localY > renderedHeight) {
         return null;
       }
 
-      return this.rememberRemotePointerPosition({
+      return {
         normalizedX: Math.min(Math.max(localX / renderedWidth, 0), 1),
         normalizedY: Math.min(Math.max(localY / renderedHeight, 0), 1)
-      });
-    }
-
-    /**
-     * @brief 基于 pointer lock 的相对位移推进远端鼠标位置。
-     * @param event 浏览器指针事件对象。
-     * @returns {{normalizedX:number, normalizedY:number}|null} 返回推进后的归一化坐标。
-     */
-    getPointerCapturedMousePosition(event) {
-      const metrics = this.getRenderedVideoMetrics();
-      if (!metrics) {
-        return this.lastRemotePointerPosition;
-      }
-
-      if (!this.lastRemotePointerPosition) {
-        return null;
-      }
-
-      const deltaX = Number.isFinite(event.movementX) ? event.movementX : 0;
-      const deltaY = Number.isFinite(event.movementY) ? event.movementY : 0;
-      if (deltaX === 0 && deltaY === 0) {
-        return this.lastRemotePointerPosition;
-      }
-
-      return this.rememberRemotePointerPosition({
-        normalizedX: this.lastRemotePointerPosition.normalizedX + deltaX / metrics.renderedWidth,
-        normalizedY: this.lastRemotePointerPosition.normalizedY + deltaY / metrics.renderedHeight
-      });
-    }
-
-    /**
-     * @brief 获取当前鼠标事件对应的远端归一化位置。
-     * @param event 浏览器鼠标事件对象。
-     * @returns {{normalizedX:number, normalizedY:number}|null} 返回归一化坐标。
-     */
-    getCurrentMousePosition(event) {
-      if (this.isPointerCaptureActive()) {
-        return this.getPointerCapturedMousePosition(event);
-      }
-
-      return this.getNormalizedMousePosition(event);
+      };
     }
 
     /**
@@ -1143,8 +602,7 @@ R"RDC_JS(
         }
       }
     }
-)RDC_JS"
-R"RDC_JS(
+
     /**
      * @brief 将浏览器滚轮增量转换为 Windows 风格滚轮步进值。
      * @param event 浏览器滚轮事件对象。
@@ -1196,7 +654,7 @@ R"RDC_JS(
         ts: Date.now()
       };
 
-      const position = this.getCurrentMousePosition(event);
+      const position = this.getNormalizedMousePosition(event);
       if (position) {
         payload.normalizedX = position.normalizedX;
         payload.normalizedY = position.normalizedY;
@@ -1225,7 +683,6 @@ R"RDC_JS(
         type: pressed ? "key_down" : "key_up",
         code,
         key: typeof event.key === "string" ? event.key : "",
-        virtualKey: Number.isFinite(event.keyCode) ? event.keyCode : 0,
         location: Number.isFinite(event.location) ? event.location : 0,
         repeat: Boolean(event.repeat),
         ts: Date.now()
@@ -1350,8 +807,7 @@ R"RDC_JS(
         }
       }, 1000);
     }
-)RDC_JS"
-R"RDC_JS(
+
     stopStatsLoop() {
       if (this.statsTimer !== null) {
         window.clearInterval(this.statsTimer);
@@ -1536,8 +992,7 @@ R"RDC_JS(
       });
       this.setStatus(`当前在线主机数: ${onlineCount}，正在连接 ${targetDeviceId}`);
     }
-)RDC_JS"
-R"RDC_JS(
+
     async attachRemoteTrack(event) {
       if (!event.track || event.track.kind !== "video") {
         return;
@@ -1782,8 +1237,7 @@ R"RDC_JS(
       this.view.videoOverlay.classList.remove("hidden");
     }
   }
-)RDC_JS"
-R"RDC_JS(
+
   const controller = new BrowserController(elements);
   controller.setScreen("auth");
   controller.setControlsOpen(false);
@@ -1806,14 +1260,6 @@ R"RDC_JS(
   window.addEventListener("unhandledrejection", (event) => {
     const reason = event.reason instanceof Error ? event.reason.message : String(event.reason);
     controller.log(`未处理的 Promise 异常: ${reason}`);
-  });
-
-  document.addEventListener("pointerlockchange", () => {
-    controller.handlePointerLockChange();
-  });
-
-  document.addEventListener("pointerlockerror", () => {
-    controller.handlePointerLockError();
   });
 
   [elements.userId, elements.targetDeviceId, elements.signalUrl].forEach((input) => {
@@ -1850,18 +1296,11 @@ R"RDC_JS(
     controller.log("远端 video 元素报告错误");
   });
 
-  elements.remoteVideo.addEventListener("pointerdown", (event) => {
-    if (!controller.isPointerCaptureActive() && !controller.getNormalizedMousePosition(event)) {
-      return;
-    }
-
+  elements.remoteVideo.addEventListener("pointerdown", () => {
     controller.setRemoteInputActive(true, "远端输入捕获已激活", {
       focusVideo: true
     });
     controller.setVideoFocusState(true);
-    if ((!event.pointerType || event.pointerType === "mouse") && !controller.isPointerCaptureActive()) {
-      controller.requestPointerCapture();
-    }
   });
 
   elements.remoteVideo.addEventListener("focus", () => {
@@ -1877,21 +1316,17 @@ R"RDC_JS(
       return;
     }
 
-    const position = controller.getCurrentMousePosition(event);
+    const position = controller.getNormalizedMousePosition(event);
     if (position) {
       controller.queueMouseSync(position);
     }
   });
 
   elements.remoteVideo.addEventListener("mousedown", (event) => {
-    if (!controller.isPointerCaptureActive() && !controller.getNormalizedMousePosition(event)) {
-      return;
-    }
-
     controller.setRemoteInputActive(true, "", {
       focusVideo: true
     });
-    const position = controller.getCurrentMousePosition(event);
+    const position = controller.getNormalizedMousePosition(event);
     if (!position) {
       return;
     }
@@ -1906,7 +1341,7 @@ R"RDC_JS(
     }
 
     event.preventDefault();
-    controller.sendMouseButton(event.button, false, controller.getCurrentMousePosition(event));
+    controller.sendMouseButton(event.button, false, controller.getNormalizedMousePosition(event));
   });
 
   elements.remoteVideo.addEventListener("contextmenu", (event) => {
@@ -1959,9 +1394,14 @@ R"RDC_JS(
   });
 
   window.addEventListener("keydown", (event) => {
-    if (event.ctrlKey && event.code === "F2") {
+    if (event.ctrlKey && event.key === "F2") {
       event.preventDefault();
       controller.toggleControls();
+      return;
+    }
+
+    if (event.key === "Escape" && elements.viewerControls.classList.contains("open")) {
+      controller.setControlsOpen(false);
       return;
     }
 
@@ -1987,16 +1427,4 @@ R"RDC_JS(
       statusMessage: "页面已关闭"
     });
   });
-})();)RDC_JS";
-
-}  // namespace
-
-std::string_view GetBrowserControllerHtml() {
-    return kBrowserControllerHtml;
-}
-
-std::string_view GetBrowserControllerScript() {
-    return kBrowserControllerScript;
-}
-
-}  // namespace rdc::controller::ui
+})();

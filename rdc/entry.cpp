@@ -3,10 +3,7 @@
  * @brief 实现 entry 相关的类型、函数与流程。
  */
 
-<<<<<<< HEAD
 #include <cstdio>
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 #include <exception>
 #include <iostream>
 #include <string>
@@ -51,7 +48,6 @@ int RunMain(int argc, char** argv);
 
 namespace {
 
-<<<<<<< HEAD
 #ifdef _WIN32
 /**
  * @brief 在调试构建中确保当前进程已连接到可见控制台。
@@ -81,8 +77,6 @@ void PrepareDebugConsoleForGuiMode() {
 }
 #endif
 
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 /**
  * @brief 输出用法信息。
  */
@@ -111,17 +105,11 @@ int main(int argc, char** argv) {
         std::cout.setf(std::ios::unitbuf);
         std::cerr.setf(std::ios::unitbuf);
 
-<<<<<<< HEAD
         rdc::protocol::common::InitializeConsoleLogger();
-=======
-        // rdc::protocol::common::WriteInfoLine("mimalloc 版本: " + std::to_string(mi_version()));
-        // rdc::protocol::common::InitializeConsoleLogger();
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
 #ifdef _WIN32
         if (argc < 2) 
         {
-<<<<<<< HEAD
 #ifdef _DEBUG
             PrepareDebugConsoleForGuiMode();
             rdc::protocol::common::WriteInfoLine("调试模式已启用控制台日志输出");
@@ -129,10 +117,6 @@ int main(int argc, char** argv) {
             if (const HWND console_window = GetConsoleWindow(); console_window != nullptr)
                 ShowWindow(console_window, SW_HIDE);
 #endif
-=======
-            if (const HWND console_window = GetConsoleWindow(); console_window != nullptr)
-                ShowWindow(console_window, SW_HIDE);
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 
             return rdc::ui::RunMain();
         }
@@ -146,12 +130,9 @@ int main(int argc, char** argv) {
         const std::string mode = argv[1];
 
         if (mode == "gui") {
-<<<<<<< HEAD
 #ifdef _WIN32
             PrepareDebugConsoleForGuiMode();
 #endif
-=======
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
             return rdc::ui::RunMain();
         }
 
@@ -167,22 +148,13 @@ int main(int argc, char** argv) {
             return rdc::controller::RunMain(argc - 2, argv + 2);
         }
 
-<<<<<<< HEAD
         PrintUsage();
         return 1;
-=======
-        // PrintUsage();
-        return 0;
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
     } catch (const std::exception& ex) {
         rdc::protocol::common::WriteErrorLine("致命错误: " + std::string(ex.what()));
     } catch (...) {
         rdc::protocol::common::WriteErrorLine("致命错误: 未知异常");
     }
 
-<<<<<<< HEAD
     return 1;
-=======
-    return 0;
->>>>>>> ec6c746a58750b061c0e595b5410919ddc2500b1
 }

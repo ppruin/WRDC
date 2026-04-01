@@ -71,3 +71,7 @@ flowchart TD
     B5 --> H7
     H6 --> B4
 ```
+
+------
+
+使用 Boost Software License 1.0 开源协议

@@ -6,25 +6,25 @@
 - vcpkg 进行了部分包管理器
   ```
   {
-  "dependencies": [
-    {
-      "name": "uwebsockets",
-      "features": [ "ssl", "zlib" ]
-    },
-    {
-      "name": "libdatachannel",
-      "features": [ "srtp" ]
-    },
-    {
-      "name": "x264",
-      "features": [ "chroma-format-all" ]
-    },
-    {
-      "name": "openh264"
-    }
-  ]
-}
-```
+    "dependencies": [
+      {
+        "name": "uwebsockets",
+        "features": [ "ssl", "zlib" ]
+      },
+      {
+        "name": "libdatachannel",
+        "features": [ "srtp" ]
+      },
+      {
+        "name": "x264",
+        "features": [ "chroma-format-all" ]
+      },
+      {
+        "name": "openh264"
+      }
+    ]
+  }
+  ```
 
 
 # 项目执行流程示意 
